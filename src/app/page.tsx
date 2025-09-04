@@ -296,7 +296,7 @@ export default function Home() {
       <section id="skills" className="bg-white">
         <div className="section-container">
           <AnimateOnScroll>
-            <h2 className="section-heading">Skills</h2>
+            <h2 className="section-heading">Skills and Systems</h2>
           </AnimateOnScroll>
           
           {/* Security Clearance - Emphasized at top */}
