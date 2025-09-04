@@ -28,27 +28,26 @@ export default function Home() {
                 <div className="flex flex-col gap-4 mb-8">
                   <div>
                     <p className="text-2xl font-semibold text-forest">
-                      Information Technology Service Delivery Manager, IRES
+                      Program Planning and Controls Specialist
                     </p>
                     <div className="flex items-center gap-2 mt-2">
-                      <h2 className="text-xl font-medium text-forest">Amentum</h2>
+                      <h2 className="text-xl font-medium text-forest">Blue Origin</h2>
+                      <span className="text-gray-400">|</span>
+                      <p className="text-lg text-gray-600">In-Space Systems | Blue Ring</p>
                     </div>
                   </div>
                 </div>
                 <div className="space-y-6 mb-8">
                   <p className="text-lg text-gray-600">
-                    IT Service Delivery Manager with expertise in enterprise systems, infrastructure management, and service level agreements. 
-                    Proven track record in program management, data analytics, and business intelligence across aerospace and defense sectors.
+                    With a Master's in Supply Chain Management from Georgetown University and extensive experience in aerospace, 
+                    I specialize in program planning, financial analysis, and business intelligence solutions.
                   </p>
                   <p className="text-lg text-gray-600">
-                    Currently leading IT operations for critical government contracts, managing cross-functional teams, 
-                    and ensuring optimal performance of enterprise technology systems. Specialized in service delivery optimization, 
-                    risk management, and strategic technology implementation.
-                  </p>
-                  <p className="text-lg text-gray-600">
-                    Extensive experience in project engineering, earned value management, and cost analysis. Expert in developing 
-                    comprehensive project schedules, resource-loaded baselines, and critical path analysis. Skilled in financial 
-                    modeling, budget management, and program performance optimization using advanced analytics and reporting tools.
+                    My expertise spans across program management, cost analysis, and data analytics, 
+                    with a proven track record at industry leaders like Blue Origin and Lockheed Martin.
+                    Currently driving program baselines and analytics for In-Space Systems,
+                    I bring a comprehensive approach to program planning and controls, combining technical expertise
+                    with strategic business insights.
                   </p>
                 </div>
                 <div className="flex gap-4 mb-8">
@@ -103,26 +102,6 @@ export default function Home() {
             <h2 className="section-heading">Experience</h2>
           </AnimateOnScroll>
           <div className="space-y-8">
-            {/* Amentum */}
-            <AnimateOnScroll>
-              <div className="card p-8">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-xl font-semibold text-forest">Amentum</h3>
-                    <div className="mt-2">
-                      <p className="text-lg font-medium">Information Technology Service Delivery Manager, IRES</p>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-gray-500">July 2025 – Present</p>
-                  </div>
-                </div>
-                <p className="text-gray-600">
-                  Leading IT service delivery operations and managing technology infrastructure to support critical business operations. Responsible for overseeing service level agreements, coordinating with cross-functional teams, and ensuring optimal performance of IT systems and services.
-                </p>
-              </div>
-            </AnimateOnScroll>
-
             {/* Blue Origin */}
             <AnimateOnScroll>
               <div className="card p-8">
@@ -134,7 +113,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="text-gray-500">June 2022 – July 2025</p>
+                    <p className="text-gray-500">June 2022 – Present</p>
                   </div>
                 </div>
                 <p className="text-gray-600">
