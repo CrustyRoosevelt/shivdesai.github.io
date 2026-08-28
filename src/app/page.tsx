@@ -1,12 +1,20 @@
 'use client';
 
+import { useState } from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 import ContactForm from '@/components/ContactForm'
 import AnimateOnScroll from '@/components/AnimateOnScroll'
+import ResumeModal from '@/components/ResumeModal'
 
 export default function Home() {
+  const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
+
   return (
     <main className="w-full">
+      <ResumeModal
+        isOpen={isResumeModalOpen}
+        onClose={() => setIsResumeModalOpen(false)}
+      />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center bg-pale">
         <div className="section-container">
@@ -53,12 +61,15 @@ export default function Home() {
                 </div>
                 <div className="flex gap-4 mb-8">
                   <a href="#experience" className="btn btn-primary">View Experience</a>
-                  <a href="/ShivDesaiResume.pdf" download className="btn btn-secondary flex items-center gap-2">
+                  <button 
+                    onClick={() => setIsResumeModalOpen(true)} 
+                    className="btn btn-secondary flex items-center gap-2"
+                  >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                     Download Resume
-                  </a>
+                  </button>
                 </div>
               </AnimateOnScroll>
             </div>
