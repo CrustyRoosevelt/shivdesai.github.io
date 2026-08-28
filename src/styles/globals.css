@@ -6,37 +6,25 @@
   --forest-green: #2d4739;
   --light-green: #a5c9a1;
   --pale-green: #f0f5f0;
-  --bg-primary: #ffffff;
-  --text-primary: #111827;
-  --text-muted: #4b5563;
-  --card-bg: #ffffff;
-  --card-border: #f3f4f6;
-  --nav-bg: rgba(255, 255, 255, 0.95);
-  --nav-border: #f3f4f6;
 }
 
 html.dark {
-  --forest-green: #34d399; /* Deep Space emerald glow */
+  --forest-green: #34d399;
   --light-green: #6ee7b7;
-  --pale-green: #0d1522; /* Deep space nebula container */
-  --bg-primary: #070b12; /* Deep Space cosmic dark */
-  --text-primary: #f1f5f9;
-  --text-muted: #94a3b8;
-  --card-bg: #0f1726; /* Space station slate panel */
-  --card-border: #1e293b;
-  --nav-bg: rgba(7, 11, 18, 0.92);
-  --nav-border: #1e293b;
+  --pale-green: #0d1522;
 }
 
 ::selection {
-  background-color: rgba(52, 211, 153, 0.2);
+  background-color: rgba(45, 71, 57, 0.1);
+}
+
+html.dark ::selection {
+  background-color: rgba(52, 211, 153, 0.25);
 }
 
 @layer base {
   body {
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-    @apply antialiased transition-colors duration-300;
+    @apply bg-white text-gray-900 antialiased dark:bg-[#070b12] dark:text-slate-100 transition-colors duration-300;
   }
 }
 
@@ -72,50 +60,40 @@ html.dark {
   }
   
   .btn-primary {
-    background-color: var(--forest-green);
-    color: #ffffff;
+    @apply bg-forest text-white;
   }
-  
+
   html.dark .btn-primary {
-    color: #06110d;
-    font-weight: 600;
+    @apply text-[#070b12] font-semibold;
   }
   
   .btn-primary:hover {
     opacity: 0.9;
-    box-shadow: 0 0 15px rgba(52, 211, 153, 0.3);
   }
 
   .btn-secondary {
-    @apply bg-transparent border-2;
-    border-color: var(--forest-green);
-    color: var(--forest-green);
+    @apply bg-transparent border-2 border-forest text-forest;
   }
   
   .btn-secondary:hover {
-    background-color: var(--forest-green);
-    color: #ffffff;
+    @apply bg-forest text-white;
   }
 
   html.dark .btn-secondary:hover {
-    color: #06110d;
+    @apply text-[#070b12];
   }
 
   .card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--card-border);
-    @apply transition-all duration-300;
+    @apply bg-white border border-gray-100 dark:bg-[#0f1726] dark:border-slate-800 transition-all duration-300;
   }
   
   .card:hover {
-    border-color: var(--forest-green);
+    @apply border-forest;
     opacity: 0.95;
-    box-shadow: 0 4px 20px -2px rgba(52, 211, 153, 0.1);
   }
 
   .section-heading {
-    @apply text-4xl md:text-5xl font-bold mb-8 uppercase tracking-tight;
-    color: var(--forest-green);
+    @apply text-4xl md:text-5xl font-bold mb-8 uppercase tracking-tight text-forest;
   }
 
   .section-container {
@@ -123,12 +101,11 @@ html.dark {
   }
 
   .nav-link {
-    color: var(--text-muted);
-    @apply transition-colors duration-200 uppercase text-sm tracking-wider;
+    @apply text-gray-600 dark:text-slate-400 transition-colors duration-200 uppercase text-sm tracking-wider;
   }
   
   .nav-link:hover {
-    color: var(--forest-green);
+    @apply text-forest;
   }
 }
 
@@ -158,6 +135,5 @@ html.dark {
   }
   to {
     transform: translateY(0);
-    opacity: 1;
   }
 }

@@ -17,7 +17,7 @@ export default function Home() {
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center bg-pale pt-20 pb-12">
+      <section className="relative min-h-screen flex items-center bg-pale">
         <div className="section-container">
           <div className="grid lg:grid-cols-5 gap-8">
             <div className="lg:col-span-3">
@@ -40,7 +40,7 @@ export default function Home() {
                       Deputy Director of Program Controls, IRES
                     </p>
                     <div className="flex items-center gap-2 mt-2">
-                      <h2 className="text-xl font-medium text-gray-800 dark:text-slate-200">Amentum</h2>
+                      <h2 className="text-xl font-medium text-forest">Amentum</h2>
                     </div>
                   </div>
                 </div>
@@ -77,7 +77,7 @@ export default function Home() {
             
             <div className="lg:col-span-2 flex flex-col justify-center">
               <AnimateOnScroll>
-                <div className="card p-8 shadow-sm">
+                <div className="card p-8 bg-white dark:bg-[#0f1726]">
                   <h3 className="text-xl font-semibold text-forest mb-4 uppercase tracking-wide">CONTACT ME</h3>
                   <p className="text-gray-600 dark:text-slate-300 mb-6">
                     Reach out if you'd like to collaborate on aerospace projects or discuss program management opportunities.
@@ -109,7 +109,7 @@ export default function Home() {
       </section>
 
       {/* Key Impact Metrics Section */}
-      <section className="bg-white dark:bg-[#070b12] border-y border-gray-100 dark:border-slate-800/80 py-10 md:py-12">
+      <section className="bg-white dark:bg-[#070b12] border-y border-gray-100 dark:border-slate-800 py-10 md:py-12">
         <div className="max-w-7xl mx-auto px-4">
           <AnimateOnScroll>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
@@ -179,7 +179,7 @@ export default function Home() {
                   <div>
                     <h3 className="text-xl font-semibold text-forest">Amentum</h3>
                     <div className="mt-2">
-                      <p className="text-lg font-medium text-gray-800 dark:text-slate-100">Deputy Director of Program Controls, Integrated R&D for Enterprise Solutions (IRES)</p>
+                      <p className="text-lg font-medium">Deputy Director of Program Controls, Integrated R&D for Enterprise Solutions (IRES)</p>
                     </div>
                   </div>
                   <div className="text-right">
@@ -202,7 +202,7 @@ export default function Home() {
                   <div>
                     <h3 className="text-xl font-semibold text-forest">Blue Origin</h3>
                     <div className="mt-2">
-                      <p className="text-lg font-medium text-gray-800 dark:text-slate-100">Program Planning and Controls Specialist, Blue Ring</p>
+                      <p className="text-lg font-medium">Program Planning and Controls Specialist, Blue Ring</p>
                     </div>
                   </div>
                   <div className="text-right">
@@ -232,7 +232,7 @@ export default function Home() {
                   <div>
                     <div className="flex justify-between items-start mb-3">
                       <div>
-                        <p className="text-lg font-medium text-gray-800 dark:text-slate-100">Project Engineer L3, NextGen GEO</p>
+                        <p className="text-lg font-medium">Project Engineer L3, NextGen GEO</p>
                       </div>
                       <div className="text-right">
                         <p className="text-gray-500 dark:text-slate-400">November 2021 – June 2022</p>
@@ -248,7 +248,7 @@ export default function Home() {
                   <div>
                     <div className="flex justify-between items-start mb-3">
                       <div>
-                        <p className="text-lg font-medium text-gray-800 dark:text-slate-100">Financial Analyst L3, GPS III</p>
+                        <p className="text-lg font-medium">Financial Analyst L3, GPS III</p>
                       </div>
                       <div className="text-right">
                         <p className="text-gray-500 dark:text-slate-400">July 2019 – November 2021</p>
@@ -277,7 +277,7 @@ export default function Home() {
                   <div>
                     <div className="flex justify-between items-start mb-3">
                       <div>
-                        <p className="text-lg font-medium text-gray-800 dark:text-slate-100">Financial Analyst L2, C2G DogPatch</p>
+                        <p className="text-lg font-medium">Financial Analyst L2, C2G DogPatch</p>
                       </div>
                       <div className="text-right">
                         <p className="text-gray-500 dark:text-slate-400">January 2019 – July 2019</p>
@@ -292,7 +292,7 @@ export default function Home() {
                   <div>
                     <div className="flex justify-between items-start mb-3">
                       <div>
-                        <p className="text-lg font-medium text-gray-800 dark:text-slate-100">Financial Analyst L2, EADGE-T</p>
+                        <p className="text-lg font-medium">Financial Analyst L2, EADGE-T</p>
                       </div>
                       <div className="text-right">
                         <p className="text-gray-500 dark:text-slate-400">November 2017 – January 2019</p>
@@ -307,7 +307,7 @@ export default function Home() {
                   <div>
                     <div className="flex justify-between items-start mb-3">
                       <div>
-                        <p className="text-lg font-medium text-gray-800 dark:text-slate-100">Financial Analyst L1, Combat System Engineering Agent (CSEA)</p>
+                        <p className="text-lg font-medium">Financial Analyst L1, Combat System Engineering Agent (CSEA)</p>
                       </div>
                       <div className="text-right">
                         <p className="text-gray-500 dark:text-slate-400">February 2017 – November 2017</p>
@@ -322,7 +322,7 @@ export default function Home() {
                   <div>
                     <div className="flex justify-between items-start mb-3">
                       <div>
-                        <p className="text-lg font-medium text-gray-800 dark:text-slate-100">Financial Analyst L1, Korean Destroyer eXperimental (KDX-III)</p>
+                        <p className="text-lg font-medium">Financial Analyst L1, Korean Destroyer eXperimental (KDX-III)</p>
                       </div>
                       <div className="text-right">
                         <p className="text-gray-500 dark:text-slate-400">February 2015 – February 2017</p>
@@ -353,7 +353,7 @@ export default function Home() {
                 <div className="flex justify-between items-start mb-4">
                   <div>
                     <h3 className="text-xl font-semibold text-forest">Georgetown University</h3>
-                    <p className="text-lg text-gray-800 dark:text-slate-100">Master of Science in Supply Chain Management</p>
+                    <p className="text-lg">Master of Science in Supply Chain Management</p>
                     <p className="text-gray-600 dark:text-slate-400">GPA: 4.0</p>
                   </div>
                   <p className="text-gray-500 dark:text-slate-400">2023</p>
@@ -366,7 +366,7 @@ export default function Home() {
                 <div className="flex justify-between items-start mb-4">
                   <div>
                     <h3 className="text-xl font-semibold text-forest">University of Central Florida</h3>
-                    <p className="text-lg text-gray-800 dark:text-slate-100">Bachelor of Science in Business Administration</p>
+                    <p className="text-lg">Bachelor of Science in Business Administration</p>
                     <p className="text-gray-600 dark:text-slate-400">Major in Finance, Minor in Accounting</p>
                   </div>
                   <p className="text-gray-500 dark:text-slate-400">2014</p>
