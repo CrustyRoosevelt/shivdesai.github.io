@@ -26,7 +26,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               try {
-                if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                if (localStorage.theme === 'dark') {
                   document.documentElement.classList.add('dark');
                 } else {
                   document.documentElement.classList.remove('dark');
@@ -36,7 +36,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body suppressHydrationWarning className="min-h-screen transition-colors duration-300">
+      <body suppressHydrationWarning className="min-h-screen bg-white text-gray-900 antialiased transition-colors duration-300">
         <Navigation />
         <main>
           {children}

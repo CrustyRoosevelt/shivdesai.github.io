@@ -57,7 +57,7 @@ export default function ContactForm() {
           type="text"
           id="name"
           name="name"
-          className="w-full px-4 py-2 border border-gray-300 dark:border-slate-700 dark:bg-[#070b12] text-gray-900 dark:text-slate-100 focus:border-forest focus:ring-1 focus:ring-forest outline-none transition duration-200"
+          className="w-full px-4 py-2 bg-white text-gray-900 border border-gray-300 dark:bg-[#070b12] dark:text-slate-100 dark:border-slate-700 focus:border-forest focus:ring-1 focus:ring-forest outline-none transition duration-200"
           required
           minLength={2}
           maxLength={50}
@@ -71,7 +71,7 @@ export default function ContactForm() {
           type="email"
           id="email"
           name="email"
-          className="w-full px-4 py-2 border border-gray-300 dark:border-slate-700 dark:bg-[#070b12] text-gray-900 dark:text-slate-100 focus:border-forest focus:ring-1 focus:ring-forest outline-none transition duration-200"
+          className="w-full px-4 py-2 bg-white text-gray-900 border border-gray-300 dark:bg-[#070b12] dark:text-slate-100 dark:border-slate-700 focus:border-forest focus:ring-1 focus:ring-forest outline-none transition duration-200"
           required
           pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
         />
@@ -84,7 +84,7 @@ export default function ContactForm() {
           id="message"
           name="message"
           rows={4}
-          className="w-full px-4 py-2 border border-gray-300 dark:border-slate-700 dark:bg-[#070b12] text-gray-900 dark:text-slate-100 focus:border-forest focus:ring-1 focus:ring-forest outline-none transition duration-200 resize-none"
+          className="w-full px-4 py-2 bg-white text-gray-900 border border-gray-300 dark:bg-[#070b12] dark:text-slate-100 dark:border-slate-700 focus:border-forest focus:ring-1 focus:ring-forest outline-none transition duration-200 resize-none"
           required
           minLength={10}
           maxLength={1000}
