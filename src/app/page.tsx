@@ -28,7 +28,7 @@ export default function Home() {
                 <div className="flex flex-col gap-4 mb-8">
                   <div>
                     <p className="text-2xl font-semibold text-forest">
-                      Information Technology Service Delivery Manager, IRES
+                      Deputy Director of Program Controls, IRES
                     </p>
                     <div className="flex items-center gap-2 mt-2">
                       <h2 className="text-xl font-medium text-forest">Amentum</h2>
@@ -110,16 +110,19 @@ export default function Home() {
                   <div>
                     <h3 className="text-xl font-semibold text-forest">Amentum</h3>
                     <div className="mt-2">
-                      <p className="text-lg font-medium">Information Technology Service Delivery Manager, IRES</p>
+                      <p className="text-lg font-medium">Deputy Director of Program Controls, Integrated R&D for Enterprise Solutions (IRES)</p>
                     </div>
                   </div>
                   <div className="text-right">
                     <p className="text-gray-500">July 2025 – Present</p>
                   </div>
                 </div>
-                <p className="text-gray-600">
-                  Leading IT service delivery operations and managing technology infrastructure to support critical business operations. Responsible for overseeing service level agreements, coordinating with cross-functional teams, and ensuring optimal performance of IT systems and services.
-                </p>
+                <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600">
+                  <li>Manage and mentor multidisciplinary team of 35+ employees; focusing on skills development, training, and increasing team capacity</li>
+                  <li>Spearhead the implementation of new operational tools, establishing infrastructure readiness to secure upcoming contract awards</li>
+                  <li>Brief program leadership and government customers on modernization strategies related to follow-on contract proposals</li>
+                  <li>Remediate critical regulatory and compliance gaps following a corporate merger, achieving alignment with stringent Missile Defense Agency (MDA) mandates</li>
+                </ul>
               </div>
             </AnimateOnScroll>
 
@@ -137,9 +140,13 @@ export default function Home() {
                     <p className="text-gray-500">June 2022 – July 2025</p>
                   </div>
                 </div>
-                <p className="text-gray-600">
-                  Leading program planning and controls for Blue Ring, including the design and implementation of new program baselines with comprehensive WBS structures and IPT-level budgets. Spearheading the development of resource-loaded program baselines for In-Space Systems' first government contract, while managing cost and schedule as primary project manager. Currently coordinating Vehicle 2 basis-of-estimates and program baseline planning for rate manufacturing, while developing Tableau dashboards for reporting across all In-Space Systems programs. Responsible for leading Monthly Operations Reviews (MOR) for the entire Blue Ring program, reporting directly to In-Space Systems leadership.
-                </p>
+                <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600">
+                  <li>Designed and implemented a new program baseline from a cost/schedule perspective including the generation of WBS structures, resource-loaded schedules, and formation of control accounts with IPT-level budgets</li>
+                  <li>Developed fully resource-loaded program baseline for first In-Space Systems government contract and managed cost and schedule as primary project manager</li>
+                  <li>Coordinated Blue Ring Vehicle 2 basis-of-estimates and program baseline planning with IPT leaders with goal of multiple vehicles, at rate manufacturing</li>
+                  <li>Generated Tableau dashboards for all In-Space Systems programs with reporting requirements and working stretch assignments to provide dashboards to other business units</li>
+                  <li>Led Monthly Operations Review (MOR) for entire Blue Ring program and government contracts reporting to In-Space Systems leadership</li>
+                </ul>
               </div>
             </AnimateOnScroll>
 
@@ -162,9 +169,11 @@ export default function Home() {
                         <p className="text-gray-500">November 2021 – June 2022</p>
                       </div>
                     </div>
-                    <p className="text-gray-600">
-                      Coordinated the completion of engineering projects focused on technical developments and scheduling, while resolving complex engineering design and test problems. Provided crucial support to the Factory team through Cost Account Management (CAM) of hardware-related activities, while fostering collaboration with Agile Engineering teams to ensure alignment with organizational objectives.
-                    </p>
+                    <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600">
+                      <li>Coordinated the completion of engineering projects focused on technical developments and scheduling, while resolving complex engineering design and test problems</li>
+                      <li>Provided crucial support to the Factory team through Cost Account Management (CAM) of hardware-related activities</li>
+                      <li>Fostered collaboration with Agile Engineering teams to ensure alignment with organizational objectives</li>
+                    </ul>
                   </div>
 
                   <div>
@@ -176,9 +185,11 @@ export default function Home() {
                         <p className="text-gray-500">July 2019 – November 2021</p>
                       </div>
                     </div>
-                    <p className="text-gray-600">
-                      Modernized financial data distribution through the development of Business Intelligence systems, enabling earlier access for managers and engineers. Implemented sophisticated Tableau dashboards utilizing SQL and VBA to automate reporting processes, reducing manual effort by 70%. Managed a $50M annual operating budget while maintaining a 98% forecast accuracy rate.
-                    </p>
+                    <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600">
+                      <li>Modernized financial data distribution through the development of Business Intelligence systems, enabling earlier access for managers and engineers</li>
+                      <li>Implemented sophisticated Tableau dashboards utilizing SQL and VBA to automate reporting processes, reducing manual effort by 70%</li>
+                      <li>Managed a $50M annual operating budget while maintaining a 98% forecast accuracy rate</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -203,9 +214,10 @@ export default function Home() {
                         <p className="text-gray-500">January 2019 – July 2019</p>
                       </div>
                     </div>
-                    <p className="text-gray-600">
-                      Developed comprehensive financial analysis tools using Microsoft Access and Power Query, creating dynamic workbooks for efficient financial data management. Expanded role to include FP&A responsibilities, utilizing Hyperion for detailed analysis of Orders, Risk and Opportunities, EBIT, and Long Range Planning (LRP).
-                    </p>
+                    <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600">
+                      <li>Developed comprehensive financial analysis tools using Microsoft Access and Power Query, creating dynamic workbooks for efficient financial data management</li>
+                      <li>Expanded role to include FP&A responsibilities, utilizing Hyperion for detailed analysis of Orders, Risk and Opportunities, EBIT, and Long Range Planning (LRP)</li>
+                    </ul>
                   </div>
 
                   <div>
@@ -217,9 +229,10 @@ export default function Home() {
                         <p className="text-gray-500">November 2017 – January 2019</p>
                       </div>
                     </div>
-                    <p className="text-gray-600">
-                      Led critical program performance analysis and senior management reviews, successfully improving program cost status from RED to GREEN through strategic evaluation and corrective actions. Managed comprehensive baseline and Estimate at Completion (EAC) adjustments to incorporate contract amendments and new schedule integrations.
-                    </p>
+                    <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600">
+                      <li>Led critical program performance analysis and senior management reviews, successfully improving program cost status from RED to GREEN through strategic evaluation and corrective actions</li>
+                      <li>Managed comprehensive baseline and Estimate at Completion (EAC) adjustments to incorporate contract amendments and new schedule integrations</li>
+                    </ul>
                   </div>
 
                   <div>
@@ -231,9 +244,10 @@ export default function Home() {
                         <p className="text-gray-500">February 2017 – November 2017</p>
                       </div>
                     </div>
-                    <p className="text-gray-600">
-                      Enhanced program-level reporting efficiency by streamlining internal and external performance report preparation, creating additional review time for stakeholders. Developed and optimized Visual Basic scripting interfaces for cross-platform integration and automation, significantly reducing manual intervention while improving process reliability.
-                    </p>
+                    <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600">
+                      <li>Enhanced program-level reporting efficiency by streamlining internal and external performance report preparation, creating additional review time for stakeholders</li>
+                      <li>Developed and optimized Visual Basic scripting interfaces for cross-platform integration and automation, significantly reducing manual intervention while improving process reliability</li>
+                    </ul>
                   </div>
 
                   <div>
@@ -245,9 +259,11 @@ export default function Home() {
                         <p className="text-gray-500">February 2015 – February 2017</p>
                       </div>
                     </div>
-                    <p className="text-gray-600">
-                      Improved data integrity through the implementation of batch reporting in proprietary software suites. Made significant contributions to the Batch II Offsets proposal, achieving a 37% cost reduction while maintaining contractual obligations. Leveraged extensive SAP knowledge to develop and implement custom scripting solutions, resulting in a 12.5% reduction in processing time.
-                    </p>
+                    <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600">
+                      <li>Improved data integrity through the implementation of batch reporting in proprietary software suites</li>
+                      <li>Made significant contributions to the Batch II Offsets proposal, achieving a 37% cost reduction while maintaining contractual obligations</li>
+                      <li>Leveraged extensive SAP knowledge to develop and implement custom scripting solutions, resulting in a 12.5% reduction in processing time</li>
+                    </ul>
                   </div>
                 </div>
               </div>
