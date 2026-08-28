@@ -1,13 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt, FaRocket, FaList } from 'react-icons/fa';
 import ContactForm from '@/components/ContactForm'
 import AnimateOnScroll from '@/components/AnimateOnScroll'
 import ResumeModal from '@/components/ResumeModal'
+import AerospaceTimeline from '@/components/AerospaceTimeline'
 
 export default function Home() {
   const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
+  const [viewMode, setViewMode] = useState<'classic' | 'mission'>('classic');
 
   return (
     <main className="w-full">
@@ -168,176 +170,212 @@ export default function Home() {
       {/* Experience Section */}
       <section id="experience" className="bg-white dark:bg-[#070b12]">
         <div className="section-container">
-          <AnimateOnScroll>
-            <h2 className="section-heading">Experience</h2>
-          </AnimateOnScroll>
-          <div className="space-y-8">
-            {/* Amentum */}
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
             <AnimateOnScroll>
-              <div className="card p-8">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-xl font-semibold text-forest">Amentum</h3>
-                    <div className="mt-2">
-                      <p className="text-lg font-medium">Deputy Director of Program Controls, Integrated R&D for Enterprise Solutions (IRES)</p>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-gray-500 dark:text-slate-400">July 2025 – Present</p>
-                  </div>
-                </div>
-                <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 dark:text-slate-300">
-                  <li>Manage and mentor multidisciplinary team of 35+ employees; focusing on skills development, training, and increasing team capacity</li>
-                  <li>Spearhead the implementation of new operational tools, establishing infrastructure readiness to secure upcoming contract awards</li>
-                  <li>Brief program leadership and government customers on modernization strategies related to follow-on contract proposals</li>
-                  <li>Remediate critical regulatory and compliance gaps following a corporate merger, achieving alignment with stringent Missile Defense Agency (MDA) mandates</li>
-                </ul>
-              </div>
+              <h2 className="section-heading mb-0">Experience</h2>
             </AnimateOnScroll>
 
-            {/* Blue Origin */}
-            <AnimateOnScroll>
-              <div className="card p-8">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-xl font-semibold text-forest">Blue Origin</h3>
-                    <div className="mt-2">
-                      <p className="text-lg font-medium">Program Planning and Controls Specialist, Blue Ring</p>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-gray-500 dark:text-slate-400">June 2022 – July 2025</p>
-                  </div>
-                </div>
-                <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 dark:text-slate-300">
-                  <li>Designed and implemented a new program baseline from a cost/schedule perspective including the generation of WBS structures, resource-loaded schedules, and formation of control accounts with IPT-level budgets</li>
-                  <li>Developed fully resource-loaded program baseline for first In-Space Systems government contract and managed cost and schedule as primary project manager</li>
-                  <li>Coordinated Blue Ring Vehicle 2 basis-of-estimates and program baseline planning with IPT leaders with goal of multiple vehicles, at rate manufacturing</li>
-                  <li>Generated Tableau dashboards for all In-Space Systems programs with reporting requirements and working stretch assignments to provide dashboards to other business units</li>
-                  <li>Led Monthly Operations Review (MOR) for entire Blue Ring program and government contracts reporting to In-Space Systems leadership</li>
-                </ul>
-              </div>
-            </AnimateOnScroll>
-
-            {/* Lockheed Martin - Space */}
-            <AnimateOnScroll>
-              <div className="card p-8">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-xl font-semibold text-forest">Lockheed Martin - Space</h3>
-                  </div>
-                </div>
-
-                <div className="space-y-8">
-                  <div>
-                    <div className="flex justify-between items-start mb-3">
-                      <div>
-                        <p className="text-lg font-medium">Project Engineer L3, NextGen GEO</p>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-gray-500 dark:text-slate-400">November 2021 – June 2022</p>
-                      </div>
-                    </div>
-                    <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 dark:text-slate-300">
-                      <li>Coordinated the completion of engineering projects focused on technical developments and scheduling, while resolving complex engineering design and test problems</li>
-                      <li>Provided crucial support to the Factory team through Cost Account Management (CAM) of hardware-related activities</li>
-                      <li>Fostered collaboration with Agile Engineering teams to ensure alignment with organizational objectives</li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <div className="flex justify-between items-start mb-3">
-                      <div>
-                        <p className="text-lg font-medium">Financial Analyst L3, GPS III</p>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-gray-500 dark:text-slate-400">July 2019 – November 2021</p>
-                      </div>
-                    </div>
-                    <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 dark:text-slate-300">
-                      <li>Modernized financial data distribution through the development of Business Intelligence systems, enabling earlier access for managers and engineers</li>
-                      <li>Implemented sophisticated Tableau dashboards utilizing SQL and VBA to automate reporting processes, reducing manual effort by 70%</li>
-                      <li>Managed a $50M annual operating budget while maintaining a 98% forecast accuracy rate</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </AnimateOnScroll>
-
-            {/* Lockheed Martin - RMS */}
-            <AnimateOnScroll>
-              <div className="card p-8">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-xl font-semibold text-forest">Lockheed Martin – Rotary and Mission Systems (RMS)</h3>
-                  </div>
-                </div>
-
-                <div className="space-y-8">
-                  <div>
-                    <div className="flex justify-between items-start mb-3">
-                      <div>
-                        <p className="text-lg font-medium">Financial Analyst L2, C2G DogPatch</p>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-gray-500 dark:text-slate-400">January 2019 – July 2019</p>
-                      </div>
-                    </div>
-                    <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 dark:text-slate-300">
-                      <li>Developed comprehensive financial analysis tools using Microsoft Access and Power Query, creating dynamic workbooks for efficient financial data management</li>
-                      <li>Expanded role to include FP&A responsibilities, utilizing Hyperion for detailed analysis of Orders, Risk and Opportunities, EBIT, and Long Range Planning (LRP)</li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <div className="flex justify-between items-start mb-3">
-                      <div>
-                        <p className="text-lg font-medium">Financial Analyst L2, EADGE-T</p>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-gray-500 dark:text-slate-400">November 2017 – January 2019</p>
-                      </div>
-                    </div>
-                    <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 dark:text-slate-300">
-                      <li>Led critical program performance analysis and senior management reviews, successfully improving program cost status from RED to GREEN through strategic evaluation and corrective actions</li>
-                      <li>Managed comprehensive baseline and Estimate at Completion (EAC) adjustments to incorporate contract amendments and new schedule integrations</li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <div className="flex justify-between items-start mb-3">
-                      <div>
-                        <p className="text-lg font-medium">Financial Analyst L1, Combat System Engineering Agent (CSEA)</p>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-gray-500 dark:text-slate-400">February 2017 – November 2017</p>
-                      </div>
-                    </div>
-                    <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 dark:text-slate-300">
-                      <li>Enhanced program-level reporting efficiency by streamlining internal and external performance report preparation, creating additional review time for stakeholders</li>
-                      <li>Developed and optimized Visual Basic scripting interfaces for cross-platform integration and automation, significantly reducing manual intervention while improving process reliability</li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <div className="flex justify-between items-start mb-3">
-                      <div>
-                        <p className="text-lg font-medium">Financial Analyst L1, Korean Destroyer eXperimental (KDX-III)</p>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-gray-500 dark:text-slate-400">February 2015 – February 2017</p>
-                      </div>
-                    </div>
-                    <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 dark:text-slate-300">
-                      <li>Improved data integrity through the implementation of batch reporting in proprietary software suites</li>
-                      <li>Made significant contributions to the Batch II Offsets proposal, achieving a 37% cost reduction while maintaining contractual obligations</li>
-                      <li>Leveraged extensive SAP knowledge to develop and implement custom scripting solutions, resulting in a 12.5% reduction in processing time</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </AnimateOnScroll>
+            {/* View Mode Switcher */}
+            <div className="flex items-center p-1 bg-pale border border-gray-200 dark:border-slate-800">
+              <button
+                onClick={() => setViewMode('classic')}
+                className={`text-xs px-3.5 py-1.5 uppercase tracking-wider font-semibold transition-all flex items-center gap-1.5 ${
+                  viewMode === 'classic'
+                    ? 'bg-forest text-white shadow-sm'
+                    : 'text-gray-600 dark:text-slate-400 hover:text-forest'
+                }`}
+              >
+                <FaList className="text-xs" />
+                <span>Standard View</span>
+              </button>
+              <button
+                onClick={() => setViewMode('mission')}
+                className={`text-xs px-3.5 py-1.5 uppercase tracking-wider font-semibold transition-all flex items-center gap-1.5 ${
+                  viewMode === 'mission'
+                    ? 'bg-forest text-white shadow-sm'
+                    : 'text-gray-600 dark:text-slate-400 hover:text-forest'
+                }`}
+              >
+                <FaRocket className="text-xs text-amber-400" />
+                <span>Mission Trajectory</span>
+                <span className="px-1.5 py-0.5 bg-amber-400 text-slate-950 text-[9px] font-extrabold uppercase tracking-tight">
+                  BETA
+                </span>
+              </button>
+            </div>
           </div>
+
+          {viewMode === 'mission' ? (
+            <AerospaceTimeline />
+          ) : (
+            <div className="space-y-8">
+              {/* Amentum */}
+              <AnimateOnScroll>
+                <div className="card p-8">
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <h3 className="text-xl font-semibold text-forest">Amentum</h3>
+                      <div className="mt-2">
+                        <p className="text-lg font-medium">Deputy Director of Program Controls, Integrated R&D for Enterprise Solutions (IRES)</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-gray-500 dark:text-slate-400">July 2025 – Present</p>
+                    </div>
+                  </div>
+                  <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 dark:text-slate-300">
+                    <li>Manage and mentor multidisciplinary team of 35+ employees; focusing on skills development, training, and increasing team capacity</li>
+                    <li>Spearhead the implementation of new operational tools, establishing infrastructure readiness to secure upcoming contract awards</li>
+                    <li>Brief program leadership and government customers on modernization strategies related to follow-on contract proposals</li>
+                    <li>Remediate critical regulatory and compliance gaps following a corporate merger, achieving alignment with stringent Missile Defense Agency (MDA) mandates</li>
+                  </ul>
+                </div>
+              </AnimateOnScroll>
+
+              {/* Blue Origin */}
+              <AnimateOnScroll>
+                <div className="card p-8">
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <h3 className="text-xl font-semibold text-forest">Blue Origin</h3>
+                      <div className="mt-2">
+                        <p className="text-lg font-medium">Program Planning and Controls Specialist, Blue Ring</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-gray-500 dark:text-slate-400">June 2022 – July 2025</p>
+                    </div>
+                  </div>
+                  <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 dark:text-slate-300">
+                    <li>Designed and implemented a new program baseline from a cost/schedule perspective including the generation of WBS structures, resource-loaded schedules, and formation of control accounts with IPT-level budgets</li>
+                    <li>Developed fully resource-loaded program baseline for first In-Space Systems government contract and managed cost and schedule as primary project manager</li>
+                    <li>Coordinated Blue Ring Vehicle 2 basis-of-estimates and program baseline planning with IPT leaders with goal of multiple vehicles, at rate manufacturing</li>
+                    <li>Generated Tableau dashboards for all In-Space Systems programs with reporting requirements and working stretch assignments to provide dashboards to other business units</li>
+                    <li>Led Monthly Operations Review (MOR) for entire Blue Ring program and government contracts reporting to In-Space Systems leadership</li>
+                  </ul>
+                </div>
+              </AnimateOnScroll>
+
+              {/* Lockheed Martin - Space */}
+              <AnimateOnScroll>
+                <div className="card p-8">
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <h3 className="text-xl font-semibold text-forest">Lockheed Martin - Space</h3>
+                    </div>
+                  </div>
+
+                  <div className="space-y-8">
+                    <div>
+                      <div className="flex justify-between items-start mb-3">
+                        <div>
+                          <p className="text-lg font-medium">Project Engineer L3, NextGen GEO</p>
+                        </div>
+                        <div className="text-right">
+                          <p className="text-gray-500 dark:text-slate-400">November 2021 – June 2022</p>
+                        </div>
+                      </div>
+                      <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 dark:text-slate-300">
+                        <li>Coordinated the completion of engineering projects focused on technical developments and scheduling, while resolving complex engineering design and test problems</li>
+                        <li>Provided crucial support to the Factory team through Cost Account Management (CAM) of hardware-related activities</li>
+                        <li>Fostered collaboration with Agile Engineering teams to ensure alignment with organizational objectives</li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <div className="flex justify-between items-start mb-3">
+                        <div>
+                          <p className="text-lg font-medium">Financial Analyst L3, GPS III</p>
+                        </div>
+                        <div className="text-right">
+                          <p className="text-gray-500 dark:text-slate-400">July 2019 – November 2021</p>
+                        </div>
+                      </div>
+                      <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 dark:text-slate-300">
+                        <li>Modernized financial data distribution through the development of Business Intelligence systems, enabling earlier access for managers and engineers</li>
+                        <li>Implemented sophisticated Tableau dashboards utilizing SQL and VBA to automate reporting processes, reducing manual effort by 70%</li>
+                        <li>Managed a $50M annual operating budget while maintaining a 98% forecast accuracy rate</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </AnimateOnScroll>
+
+              {/* Lockheed Martin - RMS */}
+              <AnimateOnScroll>
+                <div className="card p-8">
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <h3 className="text-xl font-semibold text-forest">Lockheed Martin – Rotary and Mission Systems (RMS)</h3>
+                    </div>
+                  </div>
+
+                  <div className="space-y-8">
+                    <div>
+                      <div className="flex justify-between items-start mb-3">
+                        <div>
+                          <p className="text-lg font-medium">Financial Analyst L2, C2G DogPatch</p>
+                        </div>
+                        <div className="text-right">
+                          <p className="text-gray-500 dark:text-slate-400">January 2019 – July 2019</p>
+                        </div>
+                      </div>
+                      <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 dark:text-slate-300">
+                        <li>Developed comprehensive financial analysis tools using Microsoft Access and Power Query, creating dynamic workbooks for efficient financial data management</li>
+                        <li>Expanded role to include FP&A responsibilities, utilizing Hyperion for detailed analysis of Orders, Risk and Opportunities, EBIT, and Long Range Planning (LRP)</li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <div className="flex justify-between items-start mb-3">
+                        <div>
+                          <p className="text-lg font-medium">Financial Analyst L2, EADGE-T</p>
+                        </div>
+                        <div className="text-right">
+                          <p className="text-gray-500 dark:text-slate-400">November 2017 – January 2019</p>
+                        </div>
+                      </div>
+                      <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 dark:text-slate-300">
+                        <li>Led critical program performance analysis and senior management reviews, successfully improving program cost status from RED to GREEN through strategic evaluation and corrective actions</li>
+                        <li>Managed comprehensive baseline and Estimate at Completion (EAC) adjustments to incorporate contract amendments and new schedule integrations</li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <div className="flex justify-between items-start mb-3">
+                        <div>
+                          <p className="text-lg font-medium">Financial Analyst L1, Combat System Engineering Agent (CSEA)</p>
+                        </div>
+                        <div className="text-right">
+                          <p className="text-gray-500 dark:text-slate-400">February 2017 – November 2017</p>
+                        </div>
+                      </div>
+                      <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 dark:text-slate-300">
+                        <li>Enhanced program-level reporting efficiency by streamlining internal and external performance report preparation, creating additional review time for stakeholders</li>
+                        <li>Developed and optimized Visual Basic scripting interfaces for cross-platform integration and automation, significantly reducing manual intervention while improving process reliability</li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <div className="flex justify-between items-start mb-3">
+                        <div>
+                          <p className="text-lg font-medium">Financial Analyst L1, Korean Destroyer eXperimental (KDX-III)</p>
+                        </div>
+                        <div className="text-right">
+                          <p className="text-gray-500 dark:text-slate-400">February 2015 – February 2017</p>
+                        </div>
+                      </div>
+                      <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 dark:text-slate-300">
+                        <li>Improved data integrity through the implementation of batch reporting in proprietary software suites</li>
+                        <li>Made significant contributions to the Batch II Offsets proposal, achieving a 37% cost reduction while maintaining contractual obligations</li>
+                        <li>Leveraged extensive SAP knowledge to develop and implement custom scripting solutions, resulting in a 12.5% reduction in processing time</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </AnimateOnScroll>
+            </div>
+          )}
         </div>
       </section>
 
