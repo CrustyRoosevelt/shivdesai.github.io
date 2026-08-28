@@ -11,7 +11,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Shiv Desai | Program Planning & Controls Specialist',
-  description: 'Program Planning and Controls Specialist at Blue Origin with expertise in aerospace, financial analysis, and business intelligence.',
+  description: 'Deputy Director of Program Controls with expertise in aerospace, earned value management, and business intelligence.',
 }
 
 export default function RootLayout({
@@ -20,8 +20,23 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.className} scroll-smooth`}>
-      <body suppressHydrationWarning className="min-h-screen bg-white text-gray-900">
+    <html lang="en" className={`${inter.className} scroll-smooth`} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+              } catch (_) {}
+            `,
+          }}
+        />
+      </head>
+      <body suppressHydrationWarning className="min-h-screen transition-colors duration-300">
         <Navigation />
         <main>
           {children}
@@ -29,4 +44,4 @@ export default function RootLayout({
       </body>
     </html>
   )
-} 
+}

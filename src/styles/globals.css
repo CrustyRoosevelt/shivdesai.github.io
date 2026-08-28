@@ -6,15 +6,37 @@
   --forest-green: #2d4739;
   --light-green: #a5c9a1;
   --pale-green: #f0f5f0;
+  --bg-primary: #ffffff;
+  --text-primary: #111827;
+  --text-muted: #4b5563;
+  --card-bg: #ffffff;
+  --card-border: #f3f4f6;
+  --nav-bg: rgba(255, 255, 255, 0.95);
+  --nav-border: #f3f4f6;
+}
+
+html.dark {
+  --forest-green: #34d399; /* Deep Space emerald glow */
+  --light-green: #6ee7b7;
+  --pale-green: #0d1522; /* Deep space nebula container */
+  --bg-primary: #070b12; /* Deep Space cosmic dark */
+  --text-primary: #f1f5f9;
+  --text-muted: #94a3b8;
+  --card-bg: #0f1726; /* Space station slate panel */
+  --card-border: #1e293b;
+  --nav-bg: rgba(7, 11, 18, 0.92);
+  --nav-border: #1e293b;
 }
 
 ::selection {
-  background-color: rgba(45, 71, 57, 0.1);
+  background-color: rgba(52, 211, 153, 0.2);
 }
 
 @layer base {
   body {
-    @apply bg-white text-gray-900 antialiased;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    @apply antialiased transition-colors duration-300;
   }
 }
 
@@ -50,32 +72,50 @@
   }
   
   .btn-primary {
-    @apply bg-forest text-white;
+    background-color: var(--forest-green);
+    color: #ffffff;
+  }
+  
+  html.dark .btn-primary {
+    color: #06110d;
+    font-weight: 600;
   }
   
   .btn-primary:hover {
     opacity: 0.9;
+    box-shadow: 0 0 15px rgba(52, 211, 153, 0.3);
   }
 
   .btn-secondary {
-    @apply bg-transparent border-2 border-forest text-forest;
+    @apply bg-transparent border-2;
+    border-color: var(--forest-green);
+    color: var(--forest-green);
   }
   
   .btn-secondary:hover {
-    @apply bg-forest text-white;
+    background-color: var(--forest-green);
+    color: #ffffff;
+  }
+
+  html.dark .btn-secondary:hover {
+    color: #06110d;
   }
 
   .card {
-    @apply bg-white border border-gray-100 transition-all duration-300;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    @apply transition-all duration-300;
   }
   
   .card:hover {
-    @apply border-forest;
-    opacity: 0.8;
+    border-color: var(--forest-green);
+    opacity: 0.95;
+    box-shadow: 0 4px 20px -2px rgba(52, 211, 153, 0.1);
   }
 
   .section-heading {
-    @apply text-4xl md:text-5xl font-bold mb-8 uppercase tracking-tight text-forest;
+    @apply text-4xl md:text-5xl font-bold mb-8 uppercase tracking-tight;
+    color: var(--forest-green);
   }
 
   .section-container {
@@ -83,11 +123,12 @@
   }
 
   .nav-link {
-    @apply text-gray-600 transition-colors duration-200 uppercase text-sm tracking-wider;
+    color: var(--text-muted);
+    @apply transition-colors duration-200 uppercase text-sm tracking-wider;
   }
   
   .nav-link:hover {
-    @apply text-forest;
+    color: var(--forest-green);
   }
 }
 
@@ -119,4 +160,4 @@
     transform: translateY(0);
     opacity: 1;
   }
-} 
+}

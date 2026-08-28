@@ -50,41 +50,41 @@ export default function ContactForm() {
       className="space-y-4"
     >
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">
           Name
         </label>
         <input
           type="text"
           id="name"
           name="name"
-          className="w-full px-4 py-2 border border-gray-300 focus:border-forest focus:ring-1 focus:ring-forest outline-none transition duration-200"
+          className="w-full px-4 py-2 border border-gray-300 dark:border-slate-700 dark:bg-[#070b12] text-gray-900 dark:text-slate-100 focus:border-forest focus:ring-1 focus:ring-forest outline-none transition duration-200"
           required
           minLength={2}
           maxLength={50}
         />
       </div>
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">
           Email
         </label>
         <input
           type="email"
           id="email"
           name="email"
-          className="w-full px-4 py-2 border border-gray-300 focus:border-forest focus:ring-1 focus:ring-forest outline-none transition duration-200"
+          className="w-full px-4 py-2 border border-gray-300 dark:border-slate-700 dark:bg-[#070b12] text-gray-900 dark:text-slate-100 focus:border-forest focus:ring-1 focus:ring-forest outline-none transition duration-200"
           required
           pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
         />
       </div>
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">
           Message
         </label>
         <textarea
           id="message"
           name="message"
           rows={4}
-          className="w-full px-4 py-2 border border-gray-300 focus:border-forest focus:ring-1 focus:ring-forest outline-none transition duration-200 resize-none"
+          className="w-full px-4 py-2 border border-gray-300 dark:border-slate-700 dark:bg-[#070b12] text-gray-900 dark:text-slate-100 focus:border-forest focus:ring-1 focus:ring-forest outline-none transition duration-200 resize-none"
           required
           minLength={10}
           maxLength={1000}
@@ -104,4 +104,4 @@ export default function ContactForm() {
       </div>
     </form>
   );
-} 
+}

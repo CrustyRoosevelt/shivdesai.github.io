@@ -152,9 +152,9 @@ export default function ResumeModal({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-60 backdrop-blur-sm animate-fade-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-fade-in">
       <div 
-        className="bg-white border border-forest max-w-md w-full p-6 shadow-2xl relative"
+        className="bg-white dark:bg-[#0f1726] border border-forest max-w-md w-full p-6 shadow-2xl relative text-gray-900 dark:text-slate-100"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
@@ -175,16 +175,16 @@ export default function ResumeModal({
             <h3 className="text-lg font-semibold text-forest uppercase tracking-wide">
               Security Verification
             </h3>
-            <p className="text-xs text-gray-500">Anti-Scraper Human Check</p>
+            <p className="text-xs text-gray-500 dark:text-slate-400">Anti-Scraper Human Check</p>
           </div>
         </div>
 
-        <p className="text-sm text-gray-600 mb-6">
+        <p className="text-sm text-gray-600 dark:text-slate-300 mb-6">
           To prevent automated scraping and identity harvesting bots, please complete the quick verification below to download my resume.
         </p>
 
         {/* Turnstile Container */}
-        <div className="flex flex-col items-center justify-center min-h-[90px] py-2 bg-pale border border-gray-100 rounded mb-4">
+        <div className="flex flex-col items-center justify-center min-h-[90px] py-2 bg-pale border border-gray-100 dark:border-slate-800 rounded mb-4">
           {status === 'idle' && (
             <div ref={turnstileContainerRef} className="my-1"></div>
           )}
