@@ -6,13 +6,10 @@ import { FaTimes, FaShieldAlt, FaFileDownload, FaCheckCircle, FaSpinner } from '
 interface ResumeModalProps {
   isOpen: boolean;
   onClose: () => void;
-  // Optional worker endpoint URL if using Cloudflare Worker for backend validation
   workerUrl?: string;
-  // Cloudflare Turnstile Site Key (defaults to Cloudflare's always-pass testing key if not provided)
   turnstileSiteKey?: string;
 }
 
-// Declare turnstile on window for TypeScript
 declare global {
   interface Window {
     turnstile?: {
@@ -37,7 +34,6 @@ export default function ResumeModal({
   isOpen,
   onClose,
   workerUrl = '',
-  // Cloudflare Turnstile Site Key
   turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '0x4AAAAAAEfpV_wguAIZ53Er',
 }: ResumeModalProps) {
   const [status, setStatus] = useState<'idle' | 'verifying' | 'success' | 'error'>('idle');
@@ -52,7 +48,6 @@ export default function ResumeModal({
       return;
     }
 
-    // Load Turnstile Script if not already loaded
     const scriptId = 'cloudflare-turnstile-script';
     let script = document.getElementById(scriptId) as HTMLScriptElement | null;
 
@@ -61,7 +56,7 @@ export default function ResumeModal({
         try {
           widgetIdRef.current = window.turnstile.render(turnstileContainerRef.current, {
             sitekey: turnstileSiteKey,
-            theme: 'light',
+            theme: 'dark',
             callback: (token: string) => {
               handleVerificationSuccess(token);
             },
@@ -86,6 +81,7 @@ export default function ResumeModal({
       script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
       script.async = true;
       script.defer = true;
+      script.crossOrigin = 'anonymous';
       script.onload = () => {
         setTimeout(renderWidget, 100);
       };
@@ -107,10 +103,15 @@ export default function ResumeModal({
   }, [isOpen, turnstileSiteKey]);
 
   const handleVerificationSuccess = async (token: string) => {
+    if (!token || typeof token !== 'string' || token.trim().length < 10) {
+      setStatus('error');
+      setErrorMessage('Invalid verification token. Please try again.');
+      return;
+    }
+
     setStatus('verifying');
     try {
       if (workerUrl) {
-        // Option 1: Validated via Cloudflare Worker backend
         const response = await fetch(workerUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -124,9 +125,12 @@ export default function ResumeModal({
         const blob = await response.blob();
         const downloadUrl = window.URL.createObjectURL(blob);
         triggerDownload(downloadUrl, 'Shiv_Desai_Resume.pdf');
+        window.URL.revokeObjectURL(downloadUrl);
       } else {
-        // Option 2: Turnstile client verified -> trigger protected download
-        triggerDownload('/ShivDesaiResume.pdf', 'ShivDesaiResume.pdf');
+        // Obfuscate static asset path from simple regex bundle scrapers
+        const encodedPath = 'L1NoaXZEZXNhaVJlc3VtZS5wZGY=';
+        const targetPath = window.atob(encodedPath);
+        triggerDownload(targetPath, 'Shiv_Desai_Resume.pdf');
       }
 
       setStatus('success');
@@ -144,6 +148,7 @@ export default function ResumeModal({
     const link = document.createElement('a');
     link.href = url;
     link.download = filename;
+    link.rel = 'noopener noreferrer';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -152,15 +157,15 @@ export default function ResumeModal({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-fade-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fade-in">
       <div 
-        className="bg-white dark:bg-[#0f1726] border border-forest max-w-md w-full p-6 shadow-2xl relative text-gray-900 dark:text-slate-100"
+        className="bg-[#08131A] border border-[#0297DE] max-w-md w-full p-6 shadow-2xl relative text-[#EBF5FA]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-forest transition-colors"
+          className="absolute top-4 right-4 text-[#94B3C4] hover:text-[#FC734D] transition-colors"
           aria-label="Close modal"
         >
           <FaTimes className="text-xl" />
@@ -168,44 +173,44 @@ export default function ResumeModal({
 
         {/* Header */}
         <div className="flex items-center gap-3 mb-4">
-          <div className="p-2 bg-pale text-forest rounded-full">
+          <div className="p-2.5 bg-[#02070A] text-[#FC734D] rounded-full border border-[#0297DE]/40">
             <FaShieldAlt className="text-xl" />
           </div>
           <div>
-            <h3 className="text-lg font-semibold text-forest uppercase tracking-wide">
+            <h3 className="text-lg font-semibold text-[#0297DE] uppercase tracking-wide">
               Security Verification
             </h3>
-            <p className="text-xs text-gray-500 dark:text-slate-400">Anti-Scraper Human Check</p>
+            <p className="text-xs text-[#FC734D]">Anti-Scraper Human Check</p>
           </div>
         </div>
 
-        <p className="text-sm text-gray-600 dark:text-slate-300 mb-6">
+        <p className="text-sm text-[#94B3C4] mb-6">
           To prevent automated scraping and identity harvesting bots, please complete the quick verification below to download my resume.
         </p>
 
         {/* Turnstile Container */}
-        <div className="flex flex-col items-center justify-center min-h-[90px] py-2 bg-pale border border-gray-100 dark:border-slate-800 rounded mb-4">
+        <div className="flex flex-col items-center justify-center min-h-[90px] py-2 bg-[#02070A] border border-[#0297DE]/30 rounded mb-4">
           {status === 'idle' && (
             <div ref={turnstileContainerRef} className="my-1"></div>
           )}
 
           {status === 'verifying' && (
-            <div className="flex items-center gap-2 text-forest font-medium text-sm py-3">
+            <div className="flex items-center gap-2 text-[#FC734D] font-medium text-sm py-3">
               <FaSpinner className="animate-spin text-lg" />
               <span>Verifying and preparing resume...</span>
             </div>
           )}
 
           {status === 'success' && (
-            <div className="flex items-center gap-2 text-forest font-semibold text-sm py-3">
-              <FaCheckCircle className="text-lg text-forest" />
+            <div className="flex items-center gap-2 text-[#FC734D] font-semibold text-sm py-3">
+              <FaCheckCircle className="text-lg text-[#FC734D]" />
               <span>Verified! Download starting...</span>
             </div>
           )}
 
           {status === 'error' && (
             <div className="text-center p-2">
-              <p className="text-red-600 text-sm font-medium mb-2">{errorMessage}</p>
+              <p className="text-[#FC734D] text-sm font-medium mb-2">{errorMessage}</p>
               <button
                 onClick={() => {
                   setStatus('idle');
@@ -222,8 +227,8 @@ export default function ResumeModal({
         </div>
 
         {/* Footer Note */}
-        <div className="flex items-center justify-between text-xs text-gray-400 pt-2 border-t border-gray-100">
-          <span className="flex items-center gap-1">
+        <div className="flex items-center justify-between text-xs text-[#94B3C4] pt-2 border-t border-[#0297DE]/20">
+          <span className="flex items-center gap-1 text-[#FC734D]">
             <FaFileDownload /> PDF Document
           </span>
           <span>Protected by Cloudflare Turnstile</span>

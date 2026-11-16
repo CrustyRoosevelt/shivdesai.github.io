@@ -1,8 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt, FaRocket, FaList } from 'react-icons/fa';
-import ContactForm from '@/components/ContactForm'
+import { FaLinkedin, FaRocket, FaList } from 'react-icons/fa';
 import AnimateOnScroll from '@/components/AnimateOnScroll'
 import ResumeModal from '@/components/ResumeModal'
 import AerospaceTimeline from '@/components/AerospaceTimeline'
@@ -12,24 +11,24 @@ export default function Home() {
   const [viewMode, setViewMode] = useState<'classic' | 'mission'>('classic');
 
   return (
-    <main className="w-full">
+    <main className="w-full bg-[#02070A] text-[#EBF5FA]">
       <ResumeModal
         isOpen={isResumeModalOpen}
         onClose={() => setIsResumeModalOpen(false)}
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center bg-pale">
+      <section className="relative min-h-screen flex items-center bg-[#02070A]">
         <div className="section-container">
           <div className="grid lg:grid-cols-5 gap-8">
             <div className="lg:col-span-3">
               <AnimateOnScroll>
                 <div className="relative inline-block mb-8">
-                  <div className="absolute -left-1.5 -top-1.5 w-20 h-[1px] bg-forest"></div>
-                  <div className="absolute -left-1.5 -top-1.5 w-[1px] h-20 bg-forest"></div>
-                  <div className="absolute -right-1 -bottom-1 w-20 h-[1px] bg-forest"></div>
-                  <div className="absolute -right-1 -bottom-1 w-[1px] h-20 bg-forest"></div>
-                  <h1 className="text-6xl md:text-7xl font-semibold text-forest [letter-spacing:-0.025em] uppercase px-8 py-4">
+                  <div className="absolute -left-1.5 -top-1.5 w-20 h-[2px] bg-[#0297DE]"></div>
+                  <div className="absolute -left-1.5 -top-1.5 w-[2px] h-20 bg-[#0297DE]"></div>
+                  <div className="absolute -right-1 -bottom-1 w-20 h-[2px] bg-[#FC734D]"></div>
+                  <div className="absolute -right-1 -bottom-1 w-[2px] h-20 bg-[#FC734D]"></div>
+                  <h1 className="text-6xl md:text-7xl font-semibold text-[#0297DE] [letter-spacing:-0.025em] uppercase px-8 py-4">
                     <span className="text-[1.2em] tracking-tighter">S</span>HIV{" "}
                     <span className="text-[1.2em] tracking-tighter">D</span>ESAI
                   </h1>
@@ -38,31 +37,31 @@ export default function Home() {
               <AnimateOnScroll>
                 <div className="flex flex-col gap-4 mb-8">
                   <div>
-                    <p className="text-2xl font-semibold text-forest">
+                    <p className="text-2xl font-semibold text-[#0297DE]">
                       Deputy Director of Program Controls, IRES
                     </p>
                     <div className="flex items-center gap-2 mt-2">
-                      <h2 className="text-xl font-medium text-forest">Amentum</h2>
+                      <h2 className="text-xl font-medium text-[#FC734D]">Amentum</h2>
                     </div>
                   </div>
                 </div>
                 <div className="space-y-6 mb-8">
-                  <p className="text-lg text-gray-600 dark:text-slate-300">
+                  <p className="text-lg text-[#EBF5FA]/85">
                     Deputy Director of Program Controls with expertise in enterprise systems, infrastructure management, and service level agreements. 
                     Proven track record in program management, data analytics, and business intelligence across aerospace and defense sectors.
                   </p>
-                  <p className="text-lg text-gray-600 dark:text-slate-300">
+                  <p className="text-lg text-[#EBF5FA]/85">
                     Currently leading program controls operations for critical government contracts, managing multidisciplinary teams, 
                     and ensuring optimal performance of enterprise technology systems. Specialized in service delivery optimization, 
                     risk management, and strategic technology implementation.
                   </p>
-                  <p className="text-lg text-gray-600 dark:text-slate-300">
+                  <p className="text-lg text-[#EBF5FA]/85">
                     Extensive experience in project engineering, earned value management, and cost analysis. Expert in developing 
                     comprehensive project schedules, resource-loaded baselines, and critical path analysis. Skilled in financial 
                     modeling, budget management, and program performance optimization using advanced analytics and reporting tools.
                   </p>
                 </div>
-                <div className="flex gap-4 mb-8">
+                <div className="flex flex-wrap gap-4 mb-8">
                   <a href="#experience" className="btn btn-primary">View Experience</a>
                   <button 
                     onClick={() => setIsResumeModalOpen(true)} 
@@ -79,28 +78,20 @@ export default function Home() {
             
             <div className="lg:col-span-2 flex flex-col justify-center">
               <AnimateOnScroll>
-                <div className="card p-8 bg-white dark:bg-[#0f1726]">
-                  <h3 className="text-xl font-semibold text-forest mb-4 uppercase tracking-wide">CONTACT ME</h3>
-                  <p className="text-gray-600 dark:text-slate-300 mb-6">
-                    Reach out if you'd like to collaborate on aerospace projects or discuss program management opportunities.
+                <div className="card p-8 bg-[#08131A]">
+                  <h3 className="text-xl font-semibold text-[#0297DE] mb-4 uppercase tracking-wide">CONNECT WITH ME</h3>
+                  <p className="text-[#94B3C4] mb-6">
+                    Reach out on LinkedIn if you'd like to collaborate on aerospace projects or discuss program management opportunities.
                   </p>
-                  <ContactForm />
-                  <div className="mt-8 flex gap-6">
-                    <a 
-                      href="mailto:ShivDDesai@live.com"
-                      className="bg-forest text-white p-3 rounded-full hover:scale-110 hover:shadow-lg transition duration-300"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaEnvelope className="text-2xl" />
-                    </a>
+                  <div className="flex items-center gap-4">
                     <a 
                       href="https://www.linkedin.com/in/shivdesai1/"
-                      className="bg-forest text-white p-3 rounded-full hover:scale-110 hover:shadow-lg transition duration-300"
+                      className="btn btn-primary inline-flex items-center gap-3"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <FaLinkedin className="text-2xl" />
+                      <FaLinkedin className="text-xl" />
+                      <span>Connect on LinkedIn</span>
                     </a>
                   </div>
                 </div>
@@ -111,54 +102,54 @@ export default function Home() {
       </section>
 
       {/* Key Impact Metrics Section */}
-      <section className="bg-white dark:bg-[#070b12] border-y border-gray-100 dark:border-slate-800 py-10 md:py-12">
+      <section className="bg-[#050D12] border-y border-[#0297DE]/25 py-10 md:py-12">
         <div className="max-w-7xl mx-auto px-4">
           <AnimateOnScroll>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-              <div className="card p-6 text-center border-l-4 border-l-forest hover:shadow-md transition-all">
-                <div className="text-3xl md:text-4xl font-bold text-forest mb-1">
+              <div className="card p-6 text-center border-l-4 border-l-[#FC734D] hover:shadow-md transition-all">
+                <div className="text-3xl md:text-4xl font-bold text-[#FC734D] mb-1">
                   $5B+
                 </div>
-                <p className="text-xs md:text-sm uppercase tracking-wider font-semibold text-gray-700 dark:text-slate-200">
+                <p className="text-xs md:text-sm uppercase tracking-wider font-semibold text-[#EBF5FA]">
                   Budgets Managed
                 </p>
-                <p className="text-xs text-gray-500 dark:text-slate-400 mt-1">
+                <p className="text-xs text-[#94B3C4] mt-1">
                   Across Major Defense & Space Programs
                 </p>
               </div>
 
-              <div className="card p-6 text-center border-l-4 border-l-forest hover:shadow-md transition-all">
-                <div className="text-3xl md:text-4xl font-bold text-forest mb-1">
+              <div className="card p-6 text-center border-l-4 border-l-[#0297DE] hover:shadow-md transition-all">
+                <div className="text-3xl md:text-4xl font-bold text-[#FC734D] mb-1">
                   35+
                 </div>
-                <p className="text-xs md:text-sm uppercase tracking-wider font-semibold text-gray-700 dark:text-slate-200">
+                <p className="text-xs md:text-sm uppercase tracking-wider font-semibold text-[#EBF5FA]">
                   Team Members Led
                 </p>
-                <p className="text-xs text-gray-500 dark:text-slate-400 mt-1">
+                <p className="text-xs text-[#94B3C4] mt-1">
                   Multidisciplinary Leadership & Mentorship
                 </p>
               </div>
 
-              <div className="card p-6 text-center border-l-4 border-l-forest hover:shadow-md transition-all">
-                <div className="text-3xl md:text-4xl font-bold text-forest mb-1">
+              <div className="card p-6 text-center border-l-4 border-l-[#FC734D] hover:shadow-md transition-all">
+                <div className="text-3xl md:text-4xl font-bold text-[#FC734D] mb-1">
                   10+
                 </div>
-                <p className="text-xs md:text-sm uppercase tracking-wider font-semibold text-gray-700 dark:text-slate-200">
+                <p className="text-xs md:text-sm uppercase tracking-wider font-semibold text-[#EBF5FA]">
                   Years Experience
                 </p>
-                <p className="text-xs text-gray-500 dark:text-slate-400 mt-1">
+                <p className="text-xs text-[#94B3C4] mt-1">
                   Aerospace, Defense & Program Controls
                 </p>
               </div>
 
-              <div className="card p-6 text-center border-l-4 border-l-forest hover:shadow-md transition-all">
-                <div className="text-3xl md:text-4xl font-bold text-forest mb-1">
+              <div className="card p-6 text-center border-l-4 border-l-[#0297DE] hover:shadow-md transition-all">
+                <div className="text-3xl md:text-4xl font-bold text-[#FC734D] mb-1">
                   TS/SCI
                 </div>
-                <p className="text-xs md:text-sm uppercase tracking-wider font-semibold text-gray-700 dark:text-slate-200">
+                <p className="text-xs md:text-sm uppercase tracking-wider font-semibold text-[#EBF5FA]">
                   Active Clearance
                 </p>
-                <p className="text-xs text-gray-500 dark:text-slate-400 mt-1">
+                <p className="text-xs text-[#94B3C4] mt-1">
                   Special Access & Government Programs
                 </p>
               </div>
@@ -168,7 +159,7 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="bg-white dark:bg-[#070b12]">
+      <section id="experience" className="bg-[#02070A]">
         <div className="section-container">
           <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
             <AnimateOnScroll>
@@ -176,13 +167,13 @@ export default function Home() {
             </AnimateOnScroll>
 
             {/* View Mode Switcher */}
-            <div className="flex items-center p-1 bg-pale border border-gray-200 dark:border-slate-800">
+            <div className="flex items-center p-1 bg-[#08131A] border border-[#0297DE]/30">
               <button
                 onClick={() => setViewMode('classic')}
                 className={`text-xs px-3.5 py-1.5 uppercase tracking-wider font-semibold transition-all flex items-center gap-1.5 ${
                   viewMode === 'classic'
-                    ? 'bg-forest text-white shadow-sm'
-                    : 'text-gray-600 dark:text-slate-400 hover:text-forest'
+                    ? 'bg-[#0297DE] text-[#02070A] shadow-sm'
+                    : 'text-[#94B3C4] hover:text-[#FC734D]'
                 }`}
               >
                 <FaList className="text-xs" />
@@ -192,13 +183,13 @@ export default function Home() {
                 onClick={() => setViewMode('mission')}
                 className={`text-xs px-3.5 py-1.5 uppercase tracking-wider font-semibold transition-all flex items-center gap-1.5 ${
                   viewMode === 'mission'
-                    ? 'bg-forest text-white shadow-sm'
-                    : 'text-gray-600 dark:text-slate-400 hover:text-forest'
+                    ? 'bg-[#0297DE] text-[#02070A] shadow-sm'
+                    : 'text-[#94B3C4] hover:text-[#FC734D]'
                 }`}
               >
-                <FaRocket className="text-xs text-amber-400" />
+                <FaRocket className={`text-xs ${viewMode === 'mission' ? 'text-[#02070A]' : 'text-[#FC734D]'}`} />
                 <span>Mission Trajectory</span>
-                <span className="px-1.5 py-0.5 bg-amber-400 text-slate-950 text-[9px] font-extrabold uppercase tracking-tight">
+                <span className="px-1.5 py-0.5 bg-[#FC734D] text-[#02070A] text-[9px] font-extrabold uppercase tracking-tight">
                   BETA
                 </span>
               </button>
@@ -214,16 +205,16 @@ export default function Home() {
                 <div className="card p-8">
                   <div className="flex justify-between items-start mb-4">
                     <div>
-                      <h3 className="text-xl font-semibold text-forest">Amentum</h3>
+                      <h3 className="text-xl font-semibold text-[#0297DE]">Amentum</h3>
                       <div className="mt-2">
-                        <p className="text-lg font-medium">Deputy Director of Program Controls, Integrated R&D for Enterprise Solutions (IRES)</p>
+                        <p className="text-lg font-medium text-[#EBF5FA]">Deputy Director of Program Controls, Integrated R&D for Enterprise Solutions (IRES)</p>
                       </div>
                     </div>
                     <div className="text-right">
-                      <p className="text-gray-500 dark:text-slate-400">July 2025 – Present</p>
+                      <p className="text-[#FC734D] font-mono text-sm">July 2025 – Present</p>
                     </div>
                   </div>
-                  <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 dark:text-slate-300">
+                  <ul className="list-disc list-outside ml-5 space-y-2 text-[#EBF5FA]/85 marker:text-[#FC734D]">
                     <li>Manage and mentor multidisciplinary team of 35+ employees; focusing on skills development, training, and increasing team capacity</li>
                     <li>Spearhead the implementation of new operational tools, establishing infrastructure readiness to secure upcoming contract awards</li>
                     <li>Brief program leadership and government customers on modernization strategies related to follow-on contract proposals</li>
@@ -237,16 +228,16 @@ export default function Home() {
                 <div className="card p-8">
                   <div className="flex justify-between items-start mb-4">
                     <div>
-                      <h3 className="text-xl font-semibold text-forest">Blue Origin</h3>
+                      <h3 className="text-xl font-semibold text-[#0297DE]">Blue Origin</h3>
                       <div className="mt-2">
-                        <p className="text-lg font-medium">Program Planning and Controls Specialist, Blue Ring</p>
+                        <p className="text-lg font-medium text-[#EBF5FA]">Program Planning and Controls Specialist, Blue Ring</p>
                       </div>
                     </div>
                     <div className="text-right">
-                      <p className="text-gray-500 dark:text-slate-400">June 2022 – July 2025</p>
+                      <p className="text-[#FC734D] font-mono text-sm">June 2022 – July 2025</p>
                     </div>
                   </div>
-                  <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 dark:text-slate-300">
+                  <ul className="list-disc list-outside ml-5 space-y-2 text-[#EBF5FA]/85 marker:text-[#FC734D]">
                     <li>Designed and implemented a new program baseline from a cost/schedule perspective including the generation of WBS structures, resource-loaded schedules, and formation of control accounts with IPT-level budgets</li>
                     <li>Developed fully resource-loaded program baseline for first In-Space Systems government contract and managed cost and schedule as primary project manager</li>
                     <li>Coordinated Blue Ring Vehicle 2 basis-of-estimates and program baseline planning with IPT leaders with goal of multiple vehicles, at rate manufacturing</li>
@@ -261,7 +252,7 @@ export default function Home() {
                 <div className="card p-8">
                   <div className="flex justify-between items-start mb-4">
                     <div>
-                      <h3 className="text-xl font-semibold text-forest">Lockheed Martin - Space</h3>
+                      <h3 className="text-xl font-semibold text-[#0297DE]">Lockheed Martin - Space</h3>
                     </div>
                   </div>
 
@@ -269,13 +260,13 @@ export default function Home() {
                     <div>
                       <div className="flex justify-between items-start mb-3">
                         <div>
-                          <p className="text-lg font-medium">Project Engineer L3, NextGen GEO</p>
+                          <p className="text-lg font-medium text-[#EBF5FA]">Project Engineer L3, NextGen GEO</p>
                         </div>
                         <div className="text-right">
-                          <p className="text-gray-500 dark:text-slate-400">November 2021 – June 2022</p>
+                          <p className="text-[#FC734D] font-mono text-sm">November 2021 – June 2022</p>
                         </div>
                       </div>
-                      <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 dark:text-slate-300">
+                      <ul className="list-disc list-outside ml-5 space-y-2 text-[#EBF5FA]/85 marker:text-[#FC734D]">
                         <li>Coordinated the completion of engineering projects focused on technical developments and scheduling, while resolving complex engineering design and test problems</li>
                         <li>Provided crucial support to the Factory team through Cost Account Management (CAM) of hardware-related activities</li>
                         <li>Fostered collaboration with Agile Engineering teams to ensure alignment with organizational objectives</li>
@@ -285,13 +276,13 @@ export default function Home() {
                     <div>
                       <div className="flex justify-between items-start mb-3">
                         <div>
-                          <p className="text-lg font-medium">Financial Analyst L3, GPS III</p>
+                          <p className="text-lg font-medium text-[#EBF5FA]">Financial Analyst L3, GPS III</p>
                         </div>
                         <div className="text-right">
-                          <p className="text-gray-500 dark:text-slate-400">July 2019 – November 2021</p>
+                          <p className="text-[#FC734D] font-mono text-sm">July 2019 – November 2021</p>
                         </div>
                       </div>
-                      <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 dark:text-slate-300">
+                      <ul className="list-disc list-outside ml-5 space-y-2 text-[#EBF5FA]/85 marker:text-[#FC734D]">
                         <li>Modernized financial data distribution through the development of Business Intelligence systems, enabling earlier access for managers and engineers</li>
                         <li>Implemented sophisticated Tableau dashboards utilizing SQL and VBA to automate reporting processes, reducing manual effort by 70%</li>
                         <li>Managed a $50M annual operating budget while maintaining a 98% forecast accuracy rate</li>
@@ -306,7 +297,7 @@ export default function Home() {
                 <div className="card p-8">
                   <div className="flex justify-between items-start mb-4">
                     <div>
-                      <h3 className="text-xl font-semibold text-forest">Lockheed Martin – Rotary and Mission Systems (RMS)</h3>
+                      <h3 className="text-xl font-semibold text-[#0297DE]">Lockheed Martin – Rotary and Mission Systems (RMS)</h3>
                     </div>
                   </div>
 
@@ -314,13 +305,13 @@ export default function Home() {
                     <div>
                       <div className="flex justify-between items-start mb-3">
                         <div>
-                          <p className="text-lg font-medium">Financial Analyst L2, C2G DogPatch</p>
+                          <p className="text-lg font-medium text-[#EBF5FA]">Financial Analyst L2, C2G DogPatch</p>
                         </div>
                         <div className="text-right">
-                          <p className="text-gray-500 dark:text-slate-400">January 2019 – July 2019</p>
+                          <p className="text-[#FC734D] font-mono text-sm">January 2019 – July 2019</p>
                         </div>
                       </div>
-                      <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 dark:text-slate-300">
+                      <ul className="list-disc list-outside ml-5 space-y-2 text-[#EBF5FA]/85 marker:text-[#FC734D]">
                         <li>Developed comprehensive financial analysis tools using Microsoft Access and Power Query, creating dynamic workbooks for efficient financial data management</li>
                         <li>Expanded role to include FP&A responsibilities, utilizing Hyperion for detailed analysis of Orders, Risk and Opportunities, EBIT, and Long Range Planning (LRP)</li>
                       </ul>
@@ -329,13 +320,13 @@ export default function Home() {
                     <div>
                       <div className="flex justify-between items-start mb-3">
                         <div>
-                          <p className="text-lg font-medium">Financial Analyst L2, EADGE-T</p>
+                          <p className="text-lg font-medium text-[#EBF5FA]">Financial Analyst L2, EADGE-T</p>
                         </div>
                         <div className="text-right">
-                          <p className="text-gray-500 dark:text-slate-400">November 2017 – January 2019</p>
+                          <p className="text-[#FC734D] font-mono text-sm">November 2017 – January 2019</p>
                         </div>
                       </div>
-                      <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 dark:text-slate-300">
+                      <ul className="list-disc list-outside ml-5 space-y-2 text-[#EBF5FA]/85 marker:text-[#FC734D]">
                         <li>Led critical program performance analysis and senior management reviews, successfully improving program cost status from RED to GREEN through strategic evaluation and corrective actions</li>
                         <li>Managed comprehensive baseline and Estimate at Completion (EAC) adjustments to incorporate contract amendments and new schedule integrations</li>
                       </ul>
@@ -344,13 +335,13 @@ export default function Home() {
                     <div>
                       <div className="flex justify-between items-start mb-3">
                         <div>
-                          <p className="text-lg font-medium">Financial Analyst L1, Combat System Engineering Agent (CSEA)</p>
+                          <p className="text-lg font-medium text-[#EBF5FA]">Financial Analyst L1, Combat System Engineering Agent (CSEA)</p>
                         </div>
                         <div className="text-right">
-                          <p className="text-gray-500 dark:text-slate-400">February 2017 – November 2017</p>
+                          <p className="text-[#FC734D] font-mono text-sm">February 2017 – November 2017</p>
                         </div>
                       </div>
-                      <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 dark:text-slate-300">
+                      <ul className="list-disc list-outside ml-5 space-y-2 text-[#EBF5FA]/85 marker:text-[#FC734D]">
                         <li>Enhanced program-level reporting efficiency by streamlining internal and external performance report preparation, creating additional review time for stakeholders</li>
                         <li>Developed and optimized Visual Basic scripting interfaces for cross-platform integration and automation, significantly reducing manual intervention while improving process reliability</li>
                       </ul>
@@ -359,13 +350,13 @@ export default function Home() {
                     <div>
                       <div className="flex justify-between items-start mb-3">
                         <div>
-                          <p className="text-lg font-medium">Financial Analyst L1, Korean Destroyer eXperimental (KDX-III)</p>
+                          <p className="text-lg font-medium text-[#EBF5FA]">Financial Analyst L1, Korean Destroyer eXperimental (KDX-III)</p>
                         </div>
                         <div className="text-right">
-                          <p className="text-gray-500 dark:text-slate-400">February 2015 – February 2017</p>
+                          <p className="text-[#FC734D] font-mono text-sm">February 2015 – February 2017</p>
                         </div>
                       </div>
-                      <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 dark:text-slate-300">
+                      <ul className="list-disc list-outside ml-5 space-y-2 text-[#EBF5FA]/85 marker:text-[#FC734D]">
                         <li>Improved data integrity through the implementation of batch reporting in proprietary software suites</li>
                         <li>Made significant contributions to the Batch II Offsets proposal, achieving a 37% cost reduction while maintaining contractual obligations</li>
                         <li>Leveraged extensive SAP knowledge to develop and implement custom scripting solutions, resulting in a 12.5% reduction in processing time</li>
@@ -380,7 +371,7 @@ export default function Home() {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="bg-pale">
+      <section id="education" className="bg-[#050D12] border-y border-[#0297DE]/20">
         <div className="section-container">
           <AnimateOnScroll>
             <h2 className="section-heading">Education</h2>
@@ -390,11 +381,11 @@ export default function Home() {
               <div className="card p-8">
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-xl font-semibold text-forest">Georgetown University</h3>
-                    <p className="text-lg">Master of Science in Supply Chain Management</p>
-                    <p className="text-gray-600 dark:text-slate-400">GPA: 4.0</p>
+                    <h3 className="text-xl font-semibold text-[#0297DE]">Georgetown University</h3>
+                    <p className="text-lg text-[#EBF5FA]">Master of Science in Supply Chain Management</p>
+                    <p className="text-[#FC734D] font-medium">GPA: 4.0</p>
                   </div>
-                  <p className="text-gray-500 dark:text-slate-400">2023</p>
+                  <p className="text-[#FC734D] font-mono text-sm">2023</p>
                 </div>
               </div>
             </AnimateOnScroll>
@@ -403,11 +394,11 @@ export default function Home() {
               <div className="card p-8">
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-xl font-semibold text-forest">University of Central Florida</h3>
-                    <p className="text-lg">Bachelor of Science in Business Administration</p>
-                    <p className="text-gray-600 dark:text-slate-400">Major in Finance, Minor in Accounting</p>
+                    <h3 className="text-xl font-semibold text-[#0297DE]">University of Central Florida</h3>
+                    <p className="text-lg text-[#EBF5FA]">Bachelor of Science in Business Administration</p>
+                    <p className="text-[#94B3C4]">Major in Finance, Minor in Accounting</p>
                   </div>
-                  <p className="text-gray-500 dark:text-slate-400">2014</p>
+                  <p className="text-[#FC734D] font-mono text-sm">2014</p>
                 </div>
               </div>
             </AnimateOnScroll>
@@ -416,7 +407,7 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="bg-white dark:bg-[#070b12]">
+      <section id="skills" className="bg-[#02070A]">
         <div className="section-container">
           <AnimateOnScroll>
             <h2 className="section-heading">Skills and Systems</h2>
@@ -425,9 +416,9 @@ export default function Home() {
           {/* Security Clearance */}
           <AnimateOnScroll>
             <div className="mb-12">
-              <div className="card p-6 border-2 border-forest bg-pale">
-                <h3 className="text-xl font-semibold text-forest mb-2">Security Clearance</h3>
-                <p className="text-gray-800 dark:text-slate-100 font-medium">Active TS/SCI – Eligibility Date: 2021-11-26</p>
+              <div className="card p-6 border-2 border-[#FC734D] bg-[#08131A]">
+                <h3 className="text-xl font-semibold text-[#FC734D] mb-2 uppercase tracking-wide">Security Clearance</h3>
+                <p className="text-[#EBF5FA] font-medium">Active TS/SCI – Eligibility Date: 2021-11-26</p>
               </div>
             </div>
           </AnimateOnScroll>
@@ -435,84 +426,96 @@ export default function Home() {
           <AnimateOnScroll>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="card p-6">
-                <h3 className="text-xl font-semibold text-forest mb-4">Program Management</h3>
-                <ul className="list-disc list-outside ml-4 space-y-2 text-gray-600 dark:text-slate-300">
-                  <li>Earned Value Management (EVM)</li>
-                  <li>Risk & Opportunity Management</li>
-                  <li>Critical Path & Baseline Analysis</li>
-                  <li>Resource-Loaded Scheduling</li>
+                <h3 className="text-xl font-semibold text-[#0297DE] mb-4">Program Management</h3>
+                <ul className="space-y-2 text-[#EBF5FA]/85">
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-[#FC734D] rounded-full mr-2"></span>
+                    Earned Value Management (EVM)
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-[#FC734D] rounded-full mr-2"></span>
+                    Risk & Opportunity Management
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-[#FC734D] rounded-full mr-2"></span>
+                    Critical Path & Baseline Analysis
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-[#FC734D] rounded-full mr-2"></span>
+                    Resource-Loaded Scheduling
+                  </li>
                 </ul>
               </div>
 
               <div className="card p-6">
-                <h3 className="text-xl font-semibold text-forest mb-4">Project Tools</h3>
-                <ul className="space-y-2 text-gray-600 dark:text-slate-300">
+                <h3 className="text-xl font-semibold text-[#0297DE] mb-4">Project Tools</h3>
+                <ul className="space-y-2 text-[#EBF5FA]/85">
                   <li className="flex items-center">
-                    <span className="w-2 h-2 bg-light rounded-full mr-2"></span>
+                    <span className="w-2 h-2 bg-[#FC734D] rounded-full mr-2"></span>
                     Jira & Confluence
                   </li>
                   <li className="flex items-center">
-                    <span className="w-2 h-2 bg-light rounded-full mr-2"></span>
+                    <span className="w-2 h-2 bg-[#FC734D] rounded-full mr-2"></span>
                     Digital.ai Agility
                   </li>
                   <li className="flex items-center">
-                    <span className="w-2 h-2 bg-light rounded-full mr-2"></span>
+                    <span className="w-2 h-2 bg-[#FC734D] rounded-full mr-2"></span>
                     Oracle Primavera P6
                   </li>
                   <li className="flex items-center">
-                    <span className="w-2 h-2 bg-light rounded-full mr-2"></span>
+                    <span className="w-2 h-2 bg-[#FC734D] rounded-full mr-2"></span>
                     Deltek Cobra & Microsoft Project
                   </li>
                 </ul>
               </div>
 
               <div className="card p-6">
-                <h3 className="text-xl font-semibold text-forest mb-4">Data & Analytics</h3>
-                <ul className="space-y-2 text-gray-600 dark:text-slate-300">
+                <h3 className="text-xl font-semibold text-[#0297DE] mb-4">Data & Analytics</h3>
+                <ul className="space-y-2 text-[#EBF5FA]/85">
                   <li className="flex items-center">
-                    <span className="w-2 h-2 bg-light rounded-full mr-2"></span>
+                    <span className="w-2 h-2 bg-[#FC734D] rounded-full mr-2"></span>
                     Power BI, Power Apps & Automate
                   </li>
                   <li className="flex items-center">
-                    <span className="w-2 h-2 bg-light rounded-full mr-2"></span>
+                    <span className="w-2 h-2 bg-[#FC734D] rounded-full mr-2"></span>
                     Tableau & SQL
                   </li>
                   <li className="flex items-center">
-                    <span className="w-2 h-2 bg-light rounded-full mr-2"></span>
+                    <span className="w-2 h-2 bg-[#FC734D] rounded-full mr-2"></span>
                     Python & Visual Basic (VBA)
                   </li>
                   <li className="flex items-center">
-                    <span className="w-2 h-2 bg-light rounded-full mr-2"></span>
+                    <span className="w-2 h-2 bg-[#FC734D] rounded-full mr-2"></span>
                     Advanced Financial Modeling
                   </li>
                 </ul>
               </div>
 
               <div className="card p-6">
-                <h3 className="text-xl font-semibold text-forest mb-4">Enterprise Systems</h3>
-                <ul className="space-y-2 text-gray-600 dark:text-slate-300">
+                <h3 className="text-xl font-semibold text-[#0297DE] mb-4">Enterprise Systems</h3>
+                <ul className="space-y-2 text-[#EBF5FA]/85">
                   <li className="flex items-center">
-                    <span className="w-2 h-2 bg-light rounded-full mr-2"></span>
+                    <span className="w-2 h-2 bg-[#FC734D] rounded-full mr-2"></span>
                     SAP & SAP Scripting
                   </li>
                   <li className="flex items-center">
-                    <span className="w-2 h-2 bg-light rounded-full mr-2"></span>
+                    <span className="w-2 h-2 bg-[#FC734D] rounded-full mr-2"></span>
                     Empower
                   </li>
                   <li className="flex items-center">
-                    <span className="w-2 h-2 bg-light rounded-full mr-2"></span>
+                    <span className="w-2 h-2 bg-[#FC734D] rounded-full mr-2"></span>
                     Salesforce & NetSuite
                   </li>
                   <li className="flex items-center">
-                    <span className="w-2 h-2 bg-light rounded-full mr-2"></span>
+                    <span className="w-2 h-2 bg-[#FC734D] rounded-full mr-2"></span>
                     Hyperion FP&A
                   </li>
                 </ul>
               </div>
 
               <div className="card p-6 md:col-span-2 lg:col-span-2">
-                <h3 className="text-xl font-semibold text-forest mb-4">Languages</h3>
-                <p className="text-gray-600 dark:text-slate-300">
+                <h3 className="text-xl font-semibold text-[#0297DE] mb-4">Languages</h3>
+                <p className="text-[#EBF5FA]/85">
                   Conversational Spanish, German, and Gujarati
                 </p>
               </div>

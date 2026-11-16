@@ -3,97 +3,100 @@
 @tailwind utilities;
 
 :root {
-  --forest-green: #2d4739;
-  --light-green: #a5c9a1;
-  --pale-green: #f0f5f0;
-}
-
-html.dark {
-  --forest-green: #34d399;
-  --light-green: #6ee7b7;
-  --pale-green: #0d1522;
+  --midnight-black: #02070A;
+  --midnight-card: #08131A;
+  --midnight-surface: #050D12;
+  --electric-blue: #0297DE;
+  --cantaloupe-orange: #FC734D;
+  --forest-green: #0297DE;
+  --light-green: #FC734D;
+  --pale-green: #050D12;
 }
 
 ::selection {
-  background-color: rgba(45, 71, 57, 0.1);
-}
-
-html.dark ::selection {
-  background-color: rgba(52, 211, 153, 0.25);
+  background-color: rgba(2, 151, 222, 0.35);
+  color: #ffffff;
 }
 
 @layer base {
   body {
-    @apply bg-white text-gray-900 antialiased dark:bg-[#070b12] dark:text-slate-100;
+    background-color: #02070A;
+    color: #EBF5FA;
+    @apply antialiased;
   }
 }
 
 @layer utilities {
   .text-forest {
-    color: var(--forest-green);
+    color: var(--electric-blue);
   }
   
   .bg-forest {
-    background-color: var(--forest-green);
+    background-color: var(--electric-blue);
   }
   
   .border-forest {
-    border-color: var(--forest-green);
+    border-color: var(--electric-blue);
   }
   
   .text-light {
-    color: var(--light-green);
+    color: var(--cantaloupe-orange);
   }
   
   .bg-light {
-    background-color: var(--light-green);
+    background-color: var(--cantaloupe-orange);
   }
   
   .bg-pale {
-    background-color: var(--pale-green);
+    background-color: var(--midnight-surface);
   }
 }
 
 @layer components {
   .btn {
-    @apply px-6 py-3 rounded-none transition-all duration-300 text-sm uppercase tracking-wider font-medium;
+    @apply px-6 py-3 rounded-none transition-all duration-300 text-sm uppercase tracking-wider font-semibold;
   }
   
   .btn-primary {
-    @apply bg-forest text-white;
-  }
-
-  html.dark .btn-primary {
-    @apply text-[#070b12] font-semibold;
+    background-color: #0297DE;
+    color: #02070A;
+    border: 2px solid #0297DE;
   }
   
   .btn-primary:hover {
-    opacity: 0.9;
+    background-color: #FC734D;
+    border-color: #FC734D;
+    color: #02070A;
+    box-shadow: 0 0 20px rgba(252, 115, 77, 0.4);
   }
 
   .btn-secondary {
-    @apply bg-transparent border-2 border-forest text-forest;
+    background-color: transparent;
+    border: 2px solid #FC734D;
+    color: #FC734D;
   }
   
   .btn-secondary:hover {
-    @apply bg-forest text-white;
-  }
-
-  html.dark .btn-secondary:hover {
-    @apply text-[#070b12];
+    border-color: #FC734D;
+    background-color: #FC734D;
+    color: #02070A;
+    box-shadow: 0 0 20px rgba(252, 115, 77, 0.35);
   }
 
   .card {
-    @apply bg-white border border-gray-100 dark:bg-[#0f1726] dark:border-slate-800 transition-all duration-300;
+    background-color: #08131A;
+    border: 1px solid rgba(2, 151, 222, 0.25);
+    @apply transition-all duration-300;
   }
   
   .card:hover {
-    @apply border-forest;
-    opacity: 0.95;
+    border-color: #0297DE;
+    box-shadow: 0 6px 24px -4px rgba(2, 151, 222, 0.22);
   }
 
   .section-heading {
-    @apply text-4xl md:text-5xl font-bold mb-8 uppercase tracking-tight text-forest;
+    @apply text-4xl md:text-5xl font-bold mb-8 uppercase tracking-tight;
+    color: #0297DE;
   }
 
   .section-container {
@@ -101,11 +104,12 @@ html.dark ::selection {
   }
 
   .nav-link {
-    @apply text-gray-600 dark:text-slate-400 transition-colors duration-200 uppercase text-sm tracking-wider;
+    color: #94B3C4;
+    @apply transition-colors duration-200 uppercase text-sm tracking-wider;
   }
   
   .nav-link:hover {
-    @apply text-forest;
+    color: #FC734D;
   }
 }
 

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { FaRocket, FaSatellite, FaShieldAlt, FaChartLine, FaCheckCircle, FaUsers, FaTools } from 'react-icons/fa';
+import { FaRocket, FaSatellite, FaCheckCircle } from 'react-icons/fa';
 
 interface Mission {
   id: string;
@@ -142,9 +142,9 @@ export default function AerospaceTimeline() {
   return (
     <div className="space-y-8 animate-fade-in">
       {/* Interactive Filter Subheader */}
-      <div className="flex flex-wrap items-center justify-between gap-4 pb-2 border-b border-gray-100 dark:border-slate-800">
-        <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-forest font-semibold">
-          <FaRocket className="text-sm" />
+      <div className="flex flex-wrap items-center justify-between gap-4 pb-3 border-b border-[#0297DE]/25">
+        <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-[#FC734D] font-semibold">
+          <FaRocket className="text-sm text-[#FC734D]" />
           <span>Flight Telemetry & Trajectory Mode</span>
         </div>
 
@@ -164,10 +164,10 @@ export default function AerospaceTimeline() {
               <button
                 key={tab.id}
                 onClick={() => setFilter(tab.id)}
-                className={`text-xs px-3 py-1.5 uppercase tracking-wider font-medium transition-all duration-200 ${
+                className={`text-xs px-3 py-1.5 uppercase tracking-wider font-semibold transition-all duration-200 ${
                   isSelected
-                    ? 'bg-forest text-white shadow-sm'
-                    : 'bg-pale text-gray-700 dark:text-slate-300 hover:bg-forest/10 dark:hover:bg-slate-800 border border-gray-200 dark:border-slate-800'
+                    ? 'bg-[#0297DE] text-[#02070A] border border-[#0297DE] shadow-sm'
+                    : 'bg-[#08131A] text-[#EBF5FA] hover:text-[#FC734D] hover:border-[#FC734D] border border-[#0297DE]/30'
                 }`}
               >
                 {tab.label}
@@ -180,8 +180,8 @@ export default function AerospaceTimeline() {
       {/* Grid: Timeline Orbit Track (Left) + Selected Mission Telemetry (Right) */}
       <div className="grid lg:grid-cols-12 gap-8 items-start">
         {/* Orbit Track / Mission Cards (7 cols) */}
-        <div className="lg:col-span-7 relative pl-6 border-l-2 border-forest/30 dark:border-emerald-500/30 space-y-6">
-          {filteredMissions.map((mission, idx) => {
+        <div className="lg:col-span-7 relative pl-6 border-l-2 border-[#0297DE]/35 space-y-6">
+          {filteredMissions.map((mission) => {
             const isSelected = mission.id === activeMission.id;
             return (
               <div
@@ -189,48 +189,48 @@ export default function AerospaceTimeline() {
                 onClick={() => setSelectedMission(mission.id)}
                 className={`relative card p-6 cursor-pointer transition-all duration-300 text-left group ${
                   isSelected
-                    ? 'border-2 border-forest ring-2 ring-forest/20 shadow-md scale-[1.01]'
-                    : 'hover:border-forest/60'
+                    ? 'border-2 border-[#FC734D] ring-2 ring-[#0297DE]/30 shadow-md scale-[1.01]'
+                    : 'hover:border-[#0297DE]'
                 }`}
               >
                 {/* Orbital Node Indicator */}
                 <div
                   className={`absolute -left-[31px] top-6 w-4 h-4 rounded-full border-2 transition-colors ${
                     isSelected
-                      ? 'bg-forest border-white ring-4 ring-forest/20 dark:ring-emerald-400/30'
-                      : 'bg-white dark:bg-[#070b12] border-forest group-hover:bg-forest/30'
+                      ? 'bg-[#FC734D] border-[#02070A] ring-4 ring-[#FC734D]/30'
+                      : 'bg-[#02070A] border-[#0297DE] group-hover:bg-[#0297DE]'
                   }`}
                 />
 
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                  <div className="text-xs font-mono tracking-wider font-semibold text-forest uppercase">
+                  <div className="text-xs font-mono tracking-wider font-semibold text-[#FC734D] uppercase">
                     {mission.codename}
                   </div>
                   <span
                     className={`text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-none ${
                       mission.status === 'ACTIVE ORBIT'
-                        ? 'bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-500/40'
-                        : 'bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-slate-400'
+                        ? 'bg-[#FC734D]/20 text-[#FC734D] border border-[#FC734D]/50'
+                        : 'bg-[#050D12] text-[#94B3C4] border border-[#0297DE]/30'
                     }`}
                   >
                     {mission.status}
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-gray-900 dark:text-slate-100">
+                <h3 className="text-lg font-bold text-[#EBF5FA]">
                   {mission.company}
                 </h3>
-                <p className="text-sm font-medium text-forest mb-2">
+                <p className="text-sm font-medium text-[#0297DE] mb-2">
                   {mission.role}
                 </p>
 
-                <p className="text-xs text-gray-600 dark:text-slate-300 line-clamp-2">
+                <p className="text-xs text-[#EBF5FA]/85 line-clamp-2">
                   {mission.summary}
                 </p>
 
-                <div className="flex items-center justify-between text-[11px] text-gray-500 dark:text-slate-400 mt-4 pt-3 border-t border-gray-100 dark:border-slate-800">
+                <div className="flex items-center justify-between text-[11px] text-[#94B3C4] mt-4 pt-3 border-t border-[#0297DE]/20">
                   <span>{mission.location}</span>
-                  <span className="font-mono">{mission.period}</span>
+                  <span className="font-mono text-[#FC734D]">{mission.period}</span>
                 </div>
               </div>
             );
@@ -239,32 +239,32 @@ export default function AerospaceTimeline() {
 
         {/* Telemetry Detail Monitor (5 cols) */}
         <div className="lg:col-span-5 lg:sticky lg:top-24">
-          <div className="card p-6 border-2 border-forest bg-white dark:bg-[#0f1726] shadow-lg space-y-6">
+          <div className="card p-6 border-2 border-[#0297DE] bg-[#08131A] shadow-lg space-y-6">
             {/* Monitor Header */}
-            <div className="border-b border-gray-100 dark:border-slate-800 pb-4">
-              <div className="flex items-center gap-2 text-xs font-mono uppercase text-forest font-bold mb-1">
-                <FaSatellite className="animate-pulse" />
+            <div className="border-b border-[#0297DE]/25 pb-4">
+              <div className="flex items-center gap-2 text-xs font-mono uppercase text-[#FC734D] font-bold mb-1">
+                <FaSatellite className="animate-pulse text-[#FC734D]" />
                 <span>Mission Telemetry & Deliverables</span>
               </div>
-              <h4 className="text-xl font-bold text-gray-900 dark:text-slate-100">
+              <h4 className="text-xl font-bold text-[#EBF5FA]">
                 {activeMission.company}
               </h4>
-              <p className="text-sm text-forest font-medium mt-0.5">
+              <p className="text-sm text-[#0297DE] font-semibold mt-0.5">
                 {activeMission.role}
               </p>
-              <p className="text-xs text-gray-500 dark:text-slate-400 font-mono mt-1">
+              <p className="text-xs text-[#94B3C4] font-mono mt-1">
                 {activeMission.period} | {activeMission.location}
               </p>
             </div>
 
             {/* Quick Metrics Bar */}
-            <div className="grid grid-cols-3 gap-2 bg-pale p-3 border border-gray-200 dark:border-slate-800">
+            <div className="grid grid-cols-3 gap-2 bg-[#02070A] p-3 border border-[#0297DE]/25">
               {activeMission.telemetry.map((stat, i) => (
                 <div key={i} className="text-center">
-                  <div className="text-[10px] uppercase font-bold text-gray-500 dark:text-slate-400 tracking-wider">
+                  <div className="text-[10px] uppercase font-bold text-[#94B3C4] tracking-wider">
                     {stat.label}
                   </div>
-                  <div className="text-xs font-bold text-forest mt-0.5">
+                  <div className="text-xs font-bold text-[#FC734D] mt-0.5">
                     {stat.value}
                   </div>
                 </div>
@@ -273,14 +273,14 @@ export default function AerospaceTimeline() {
 
             {/* Mission Deliverables / Direct Bullet Points */}
             <div>
-              <h5 className="text-xs uppercase tracking-wider font-bold text-gray-800 dark:text-slate-200 mb-3 flex items-center gap-1.5">
-                <FaCheckCircle className="text-forest text-sm" />
+              <h5 className="text-xs uppercase tracking-wider font-bold text-[#EBF5FA] mb-3 flex items-center gap-1.5">
+                <FaCheckCircle className="text-[#FC734D] text-sm" />
                 <span>Key Mission Accomplishments</span>
               </h5>
-              <ul className="space-y-2.5 text-xs text-gray-600 dark:text-slate-300">
+              <ul className="space-y-2.5 text-xs text-[#EBF5FA]/90">
                 {activeMission.bulletPoints.map((bullet, idx) => (
                   <li key={idx} className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 bg-forest rounded-full mt-1.5 flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 bg-[#FC734D] rounded-full mt-1.5 flex-shrink-0" />
                     <span className="leading-relaxed">{bullet}</span>
                   </li>
                 ))}

@@ -1,7 +1,6 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
-  darkMode: 'class',
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -10,16 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'forest': '#2F5233',
-        'forest-dark': '#1F3622',
-        'light': '#8FA98F',
-        'pale': '#F5F7F5'
+        'midnight': '#02070A',
+        'midnight-card': '#08131A',
+        'midnight-surface': '#050D12',
+        'electric': '#0297DE',
+        'cantaloupe': '#FC734D',
+        'forest': '#0297DE',
+        'forest-dark': '#050D12',
+        'light': '#FC734D',
+        'pale': '#050D12'
       },
       transitionTimingFunction: {
         'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
       },
       backgroundImage: {
-        'name-gradient': 'linear-gradient(135deg, #2F5233 0%, #1F3622 100%)',
+        'name-gradient': 'linear-gradient(135deg, #0297DE 0%, #FC734D 100%)',
       }
     },
   },
